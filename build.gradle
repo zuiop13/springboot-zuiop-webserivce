@@ -1,0 +1,38 @@
+buildscript {
+    ext { //전역변수
+        springBootVersion = '2.1.9.RELEASE'
+    }
+    repositories { //원격저장소 지정
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// 위 설정을 통해 원하는 플러그인 설정 (springboot)
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.zuiop.boot'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+//plugins {
+//    id 'java'
+//}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    // postgresql jdbc
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
+}
