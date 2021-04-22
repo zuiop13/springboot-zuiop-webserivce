@@ -1,4 +1,4 @@
-package web;
+package com.zuiop.admin.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,6 @@ public class HelloControllerTest {
     @Test
     public void hello_Return() throws Exception{
         String hello = "hello";
-
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
