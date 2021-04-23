@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no,email=no,address=no">
+        <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+        <meta name="robots" content="noindex">
+        <meta name="title" content="국가 연구데이터 플랫폼">
+        <meta name="keywords" content="국가 연구데이터 플랫폼">
+        <meta name="description" content="사이트 설명">
+        <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+        <title>국가 연구데이터 플랫폼 : DataON</title>
+
+        <!-- 공통 CSS -->
+        <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+        <!-- 서브 CSS -->
+        <link rel="stylesheet" href="../css/sub.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- 공통 JS -->
+        <!--[if lt IE 9]>
+        <script src="../js/dist/jquery/html5.js"></script>
+        <![endif]-->
+        <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+        <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+        <script src="../js/menu.js"></script>
+        <script src="../js/cmmn.js"></script>
+        <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+        <!-- 서브 JS -->
+        <script src="../js/sub.js"></script>
+        <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+    </head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">데이터 등록</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>등록</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>데이터등록</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="container">
+            <div id="content">
+                <div class="subreq_wrap">
+                    <h3 class="title">분석서비스 신청</h3>
+                    <div class="input_wrap">
+                        <div class="item">
+                            <dl>
+                                <dt>연구제목<em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <textarea id="rac_title" name="rac_title" rows="1" maxlength="100" onkeyup="engKorChkWord(this, 100);" class="byteChk"></textarea>
+                                    <div class="text_byteBox">
+                                        <span class="textbyte">0</span>&nbsp;<span>byte/100byte</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item">
+                            <dl>
+                                <dt><label for="actExplKor">설명</label></dt>
+                                <dd>
+                                    <textarea id="actExplKor" name="actExplKor" rows="5" maxlength="512" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                    <div class="text_byteBox">
+                                        <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item">
+                            <dl>
+                                <dt>연구목적 및 필요성</dt>
+                                <dd>
+                                    <textarea name="rac_need" id="rac_need" maxlength="512" rows="5" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                    <div class="text_byteBox">
+                                        <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                    </div>
+                                    <div class="info_box type2">
+                                        <i class="xi-error"></i>
+                                        <span>연구를 통해 이루고자 하는 목적 및 연구의 필요성을 서술함으로써, 연구의 중요성을 파악할 수 있도록 작성해주세요.</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item">
+                            <dl>
+                                <dt>연구 목표 및 내용</dt>
+                                <dd>
+                                    <textarea name="rac_content" id="rac_content" maxlength="512" rows="5" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                    <div class="text_byteBox">
+                                        <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                    </div>
+                                    <div class="info_box type2">
+                                        <i class="xi-error"></i>
+                                        <span>본 분석플랫폼 사용 연구기간 중 수행할 연구 내용의 범위와 방법에 대해 작성해주세요.</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item">
+                            <dl>
+                                <dt>예상 성과 및 파급효과</dt>
+                                <dd>
+                                    <textarea name="rac_exp" id="rac_exp" maxlength="512" rows="1" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                    <div class="text_byteBox">
+                                        <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item">
+                            <dl>
+                                <dt>신청기간<em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <span class="rac_date_box">
+                                        <label for="datasetCreatDtStart">시작일</label>
+                                        <input type="text" id="datasetCreatDtStart" name="datasetCreatDtStart" title="신청기간" class="rac_date dateBox" value="2020/09/03">
+                                        <label for="datasetCreatDtStart" class="cal_btn"><i class="xi-calendar-check rac_calendar"></i></label>
+                                    </span>
+                                    <span class="rac_date_box rac_date_fnh">
+                                        <label for="datasetCreatDtFinish">종료일</label>
+                                        <input type="text" id="datasetCreatDtFinish" name="datasetCreatDtFinish" title="신청기간" class="rac_date dateBox" value="2020/11/03">
+                                        <label for="datasetCreatDtFinish" class="cal_btn"><i class="xi-calendar-check rac_calendar"></i></label>
+                                    </span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="item rac_type">
+                            <dl>
+                                <dt>VM유형</dt>
+                                <dd>
+                                    <select name="rac_type" id="rac_type">
+                                        <option>CENTOS 7 - GNOME</option>
+                                        <option value="01">A</option>
+                                        <option value="02">B</option>
+                                        <option value="03">C</option>
+                                        <option value="04">D</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </div>
+                        <h5>신청하는 서비스 유형</h5>
+                        <div class="table_wrap">
+                            <table class="tbl">
+                                <caption>등록중인 LINK 정보를 나타낸 표로, 번호, 구분, 분류, 제목, 등록방식, 원문보기, 삭제로 구분되어 있습니다.</caption>
+                                <colgroup>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" rowspan="2">서비스 유형<br>(Service Type)</th>
+                                        <th scope="col" colspan="2">VM(CLI)</th>
+                                        <th scope="col" colspan="3">WorkFlow(GUI/CLI)</th>
+                                        <th scope="col" colspan="3">Storage(Gb)</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">vCPU</th>
+                                        <th scope="col">Mem</th>
+                                        <th scope="col">vCPU</th>
+                                        <th scope="col">Mem</th>
+                                        <th scope="col">GPU</th>
+                                        <th scope="col">VM<br>(Only for OS)</th>
+                                        <th scope="col">분석저장소<br>(Lustre)</th>
+                                        <th scope="col">파일개수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="w20"><input type="radio" name="service_type" value="c.Normal(C1)" id="cNormal"><label for="cNormal">c.Normal(C1)</label></td>
+                                        <td class="w10">2</td>
+                                        <td class="w10">4G</td>
+                                        <td class="w10">2</td>
+                                        <td class="w10">제한없음</td>
+                                        <td class="w10">-</td>
+                                        <td class="w10">15G</td>
+                                        <td class="w10">100G</td>
+                                        <td class="w10">10000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w10"><input type="radio" name="service_type" value="g.Normal(G1)" id="gNormal"><label for="gNormal">g.Normal(G1)</label></td>
+                                        <td class="w10">2</td>
+                                        <td class="w10">4G</td>
+                                        <td class="w10">2</td>
+                                        <td class="w10">제한없음</td>
+                                        <td class="w10">0.5</td>
+                                        <td class="w10">15G</td>
+                                        <td class="w10">100G</td>
+                                        <td class="w10">10000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="gray_line tac rac_text_wrap">
+                            <div class="reg_complete">
+                                <span><i class="xi-error big_icon"></i></span>
+                                <strong>&lt;주의사항&gt;</strong>
+                                <div class="gray_box">
+                                    <p>국가연구데이터 분석 플랫폼(CANVAS) 서비스 운영 정책은 변경될 수 있습니다.</p>
+                                    <p>국가연구데이터 분석 플랫폼(CANVAS)은 시스템 차원의 데이터 백업을 진행하지 않으며 데이터 손실에 대한 책임을 지지 않습니다.
+                                        주기적으로 중요한 데이터를 백업해주시기 바랍니다.</p>
+                                    <p>- 국가연구데이터 분석 플랫폼(CANVAS) 분산저장서비스 (HDFS, 500G)를 활용하고자 하는 경우 관리자에게 메일로 신청해 주시기 바랍니다.
+                                        연구결과물에 본 시스템의 사사(Acknowledgement)를 권장합니다.. “본 연구를 국가연구데이터 분석플랫폼(CANVAS)의 자원을 활용하여
+                                        연구가 진행되었습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_btn_section">
+                <a href="#" class="btn_def black">목록으로</a>
+                <a href="#" class="service_req_btn btn_def blue">서비스 신청</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        /*바이트수 체크와 달력부분 스크립트는 기존에 있던부분 사용*/
+
+        //Byte check
+        $(document).on('keyup', '.byteChk', function(e){
+            var data = $(this).val();
+            $(this).next().find('.textbyte').text(getBytes(data));
+        });
+        function getBytes(str){
+            var cnt = 0;
+            for(var i =0; i<str.length;i++) {
+                cnt += (str.charCodeAt(i) >512) ? 2 : 1;
+            }
+            return cnt;
+        }
+    </script>
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* =========================== 코로나-19 실시간 연구 데이터 ============================ */
+
+@font-face{
+    font-family: noto;
+    src: url(../fonts/NotoSans/NotoSans-Regular.otf);
+}
+.covidmap_wrap>div {display: table;}
+.covid_title {font-weight: bold; display: inline-block;}
+.covidmap_wrap {margin: 0; padding: 0 0 3rem;}
+.covidmap_nav {width: 33.333%; margin: 0 !important; color: #fff; padding: 0 2rem; float: left;}
+.covidmap_nav>h3>span {font-size: 1rem;}
+.covidmap_nav>h3 {float: left; margin: 0 !important; padding: 0 !important;}
+.covidmap_nav:nth-child(1) {background: #0288c7;}
+.covidmap_nav:nth-child(2) {background: #0d62a2;}
+.covidmap_nav:nth-child(3) {background: #224965;}
+.covidmap {width: 33.33%; background: #e7e7e7; height: 15vh; float: left; margin-bottom: 1rem;}
+.covid-19 {background: #333b6b; padding: 0 3rem; margin: 1rem 0 .5rem; width: 100%; height: 5rem; color: #fff;}
+.covid-19>h3 {float: left;font-weight: bold; margin: 1rem;}
+.covid-19>h3>.covid_name {color: #ffba00; font-weight: bold;}
+.covid-19>div {float: right; width: 10rem; background: #000; color: #fff;  text-align: center; border-radius: 60px; float: right; margin: 1rem; padding: .25rem 0rem;  margin-top: 1.5rem;
+font-size: 1.2rem; display: table;}
+.covid-19>div:after {position: absolute; margin-top: -1.45rem; margin-left: 8rem; content: ""; display: block; background-image: url(../images/arrow.png); background-size: cover; background-repeat: no-repeat; height: 1rem; width: .6rem;}
+.covid-RnD {width: 49.5%; background: #409fa1; float: right; color: #fff; text-align: center; padding:0.5rem 0 1.3rem;}
+.covidmap_wrap:after {content: ""; display: block; clear: both;}
+.covid-RnD>h3 {font-weight: bold; margin-right: 6rem;}
+.covid-RnD>h3:before {position: absolute; margin-left:3rem; content: ""; display: block; background: url(../images/RnD.png); background-size: contain; width: 3rem; height: 3rem;}
+.covid-RnD>h3:after {position: relative;margin-top: -2rem; margin-left: 110%; content: ""; display: block; background: url(../images/arrow.png); background-repeat: no-repeat; background-size: contain; width: 1rem; height: 1rem;}
+.RnD_01 {float: left!important;}
+.RnD_02 {background-color: #09686c !important; color: #fff!important; float: right!important;}
+.RnD_03 {background: #0976aa; float: left !important;}
+.RnD_04 {background: #263d77 !important; color: #fff !important; float: right!important;}
+.RnD_03>h3:before {background: url(../images/KOAR.png); background-size: contain; width: 5rem; height: 1.45rem; margin-top: .8rem; margin-left: 3.15rem;}
+.RnD_04>h3:before {background: url(../images/kosen.jpg) !important; background-size: contain; width: 5.6rem!important; margin-top: .5rem !important; height: 1.45rem;margin: .5rem 0 0 3.1rem;}
+.RnD_02>h3:before {background: url(../images/science.jpg) !important; background-size: contain; width: 9.3rem!important; height: 1rem; margin-top: .8rem;}
+
+.RnD_2n>h3 {font-weight: bold; margin-right: 6rem;}
+.RnD_2n>h3:before {position: absolute; margin-top: 0; margin-left:3rem; content: ""; display: block; background: url(../images/RnD.png); background-size: contain; width: 2rem; height: 2rem;}
+.RnD_2n>h3:after {position: relative;margin-top: -2rem; margin-left: 110%; content: ""; display: block; background: url(../images/arrow.png); background-repeat: no-repeat; background-size: contain; width: 1rem; height: 1rem;}
+.covid-RnD {text-align: right;}
+.RnD1 {margin-bottom: .5rem; float: left;}
+
+
+.covid_section_01 {display: none;}
+.covid_nav {list-style: none; padding: 0; margin-top: 1rem;}
+.covid_nav>li {float: left; padding: 0 .5rem;}
+.covid_nav>li:nth-child(1) {float: left; padding: 0 .5rem 0 0;}
+.covid_nav>li:nth-child(1):after {position: absolute; margin-top: .3rem; content: "|"; font-size: .5rem; padding: 0 .5rem; color: #929292;}
+.covid_nav>li:nth-child(2):after {position: absolute; margin-top: .3rem; content: "|"; font-size: .5rem; padding: 0 .5rem; color: #929292;}
+.covid_nav>li>span {color: #929292;}
+.covid_date_contents {width: 100%; height: 15rem;}
+.covid_more {float: right; width: 15rem; height: 2.5rem; color: #fff; background: #037595; border-radius: 5px; line-height: .5rem;}
+.covid_more>span {padding: 1rem; float: left;}
+.covid_more>span:after {position: absolute; margin-top: -.7rem; margin-left: 12.5rem; content: ""; display: block; background-image: url(../images/arrow.png); background-size: cover; background-repeat: no-repeat; height: 1rem; width: .6rem;}
+
+.covid_section_02 {margin-top:2rem;}
+.country_date {display: block; width: 100%; height: 8rem;}
+.country_date>div {border: 1px solid #e5e4e4; width: 15.3%; height: 2.5rem; float: left; border-radius: 5px; margin: .5rem .5rem; color: #929292; text-align: center; padding-top:.4rem;}
+.country_date>div:hover {background: #32375d; color:#fff; cursor: pointer;}
+.country_date>div:first-child {margin-left: 0 !important;}
+.country_date>div:last-child {margin-right: 0 !important;}
+.country_date>div:nth-child(6) {margin-right: 0;}
+.country_date>div:nth-child(7) {margin-left: 0;}
+.covid_section_02:after {content: ""; display: block; clear: both;}
+
+.covid_banner {width: 100%; background: #f4f4f4; border-radius: 10px; font-size: 1.3rem; text-align: center; padding: 1.5rem;}
+.covid_banner:after {position: absolute; margin-top: -2.5rem; margin-left: 2rem; z-index: 10; content: ""; display: block; background-image:url(../images/korea.png); background-size: cover; background-repeat: no-repeat; width: 4.7rem; height: 2.8rem;}
+.date_rank {margin: 1rem 0 2rem;}
+.date_rank>div {padding: .5rem 0; border-bottom: 1px solid #e3e2e2;}
+.date_rank>h3 {border-bottom: 1px solid #000;}
+.date_rank>div>span {padding: 0 1rem;}
+
+.covid_etc {width: 100%;  background: #1d213a; padding: 0rem; height: 14rem; color: #fff; text-align: center; font-size: 1.2rem; padding: .5rem .5rem;; margin-bottom: .5rem;}
+
+.covid_section_03:after{content:"";display:block;clear:both}
+.covid_section_04>div{padding:0.9375rem}
+
+@media  (max-width : 1199.98px) {
+    .country_date>div {margin: .5rem .8%;}
+    .country_date>div:nth-child(6) {margin-right: 0;}
+    .country_date>div:nth-child(7) {margin-left: 0;}
+    .covid_banner {width: 100%; background: #f4f4f4; border-radius: 10px; font-size: 1rem; text-align: center; padding: 1.5rem;}
+    .covid_banner:after {margin-top: -1.7rem; margin-left: .5rem; width: 3rem; height: 1.8rem;}
+    .covid_title {font-size: 1.3rem;}
+    
+
+}
+@media  (max-width : 940px) {
+    .RnD_03>h3:before {height: 1.5rem;}
+    .covid-RnD {width: 100%; margin-bottom: .6rem;}
+    .covid-KOAR {width: 100%}
+}
+
+@media  (max-width : 850px) {
+    .covidmap_nav>h3 {font-size: 1.2rem !important;}
+    .covid_title_sub {font-size: .8rem;}
+    .covid_title {font-size: 1.2rem;}
+    .covid_banner {padding-top: 3rem;}
+    .covid_banner:after {margin-top: -3.5rem; margin-left: 40%; width: 3rem; height: 1.8rem;}
+    .covid-19>h3 {font-size: 1.2rem; padding: 1rem 0rem; float: none; text-align: center; padding: 0; margin: 0}
+    .covid-19>div {font-size: 1rem;float: none; margin-left: 35%; padding: 0; margin: 1rem 0 1rem 35%;}
+    .covid-19>div:after {margin-top: -1.32rem;}
+    .covidmap_nav {width: 100%;}
+    .covidmap_nav>h3:before {content: "▼ "; font-size: .5rem; padding-right: 1rem;}
+    .tabactive {font-size: .8rem;}
+    .tabledisable {font-size: .8rem;}
+}
+
+@media  (max-width : 662px) {
+    .covid_title {font-size: 1rem;}
+    .tabactive {font-size: 0.8rem; padding: .5rem 0; text-align: center;}
+    .tabledisable {font-size: 0.8rem; padding: .5rem 0; text-align: center;}
+    .covid_banner {font-size: .7rem;}
+    .date_rank>div, .date_rank>div>span {font-size: .7rem;}
+    .nav-item i {display: none;}
+    .covid-19>div {margin: 1rem 0 1rem 29%;}
+    .covid-RnD>h3 {font-size: 1rem;}
+    .RnD_01>h3:before {height: 2rem; width: 2rem;}
+    .RnD_02>h3:before {height: 2rem;width: 8rem !important; background-size: cover!important;}
+    .RnD_03>h3:before {height: 1.5rem!important;width:5.3rem !important; background-size: cover!important; margin: 5px 0px 0px 50px;}
+    .RnD_04>h3:before {height: 2rem;width: 5.5rem !important; background-size: cover!important; margin-top: 0 !important;}
+}

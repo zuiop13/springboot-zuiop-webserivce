@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+    <meta name="robots" content="noindex">
+    <meta name="title" content="국가 연구데이터 플랫폼">
+    <meta name="keywords" content="국가 연구데이터 플랫폼">
+    <meta name="description" content="사이트 설명">
+    <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+    <title>데이터등록 | 등록 | 국가 연구데이터 플랫폼 : DataON</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 공통 JS -->
+    <!--[if lt IE 9]>
+    <script src="../js/dist/jquery/html5.js"></script>
+    <![endif]-->
+    <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/cmmn.js"></script>
+    <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+    <!-- 서브 JS -->
+    <script src="../js/sub.js"></script>
+    <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+</head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">데이터 등록</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="loc_row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>등록</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>데이터등록</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="container">
+            <div id="content">
+                <!-- 컨텐츠 입력 : s -->
+
+                <h3 class="title">연구데이터 등록</h3>
+
+                <!-- 아래 a태그에 class="on"을 주면 페이지 로딩 후 펼쳐진 상태가 됩니다. -->
+                <div class="slide_box">
+                    <a href="#">언어선택 <span>OPEN</span></a>
+                    <div class="slide_item">
+                        <p>DataON은 글로벌서비스를 지향합니다.<br>
+                            이에따라 영어를 주 언어로 제공하며, 이용자가 원할경우 부 언어를 지정할 수 있습니다. 등록하시는 데이터셋의 언어를 선택해주세요.</p>
+                        <ul class="lang_list">
+                            <li>
+                                <label for="lang">주 언어</label>
+                                <select name="lang" id="lang">
+                                    <option value="ko" selected>한국어</option>
+                                    <option value="eng">영어</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="sub_lang">부 언어</label>
+                                <select name="sub_lang" id="sub_lang">
+                                    <option value="ko">한국어</option>
+                                    <option value="eng">영어</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info_box">
+                    <i class="xi-error"></i>
+                    <span>연구데이터의 등록은 총 5단계를 통해 정보를 수집합니다. 많은 시간이 소요될 수 있으므로 충분히 준비를 하신 후 진행을 부탁드립니다.</span>
+                </div>
+
+                <!-- 현재 단계 구분은 li태그에 class="on" 을 넣어주시면 됩니다. -->
+                <ul class="step_guide">
+                    <li>
+                        <div class="step_item">
+                            <i>1</i>
+                            <strong>기본정보</strong>
+                            <em>필수 14/14</em>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>2</i>
+                            <strong>데이터 정보</strong>
+                            <em>필수 14/<span>0</span></em>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>3</i>
+                            <strong>라이센스 관리</strong>
+                            <em>필수</em>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>4</i>
+                            <strong>과제/논문 정보</strong>
+                        </div>
+                    </li>
+                    <li class="on">
+                        <div class="step_item">
+                            <i>5</i>
+                            <strong>부가정보</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>6</i>
+                            <strong>등록완료</strong>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="title_align clear">
+                    <div class="titA_left">
+                        <h4 class="title inlineB">부가 정보</h4>
+                        <div class="guide_txt type2">
+                            <i class="xi-error"></i>
+                            <span>부가정보의 입력은 필수항목이 아닙니다. 본 절차가 불필요하신 분은 다음 정보입력화면으로 바로 이동하실 수 있습니다.</span>
+                        </div>
+                    </div>
+                    <div class="titA_right">
+                        <a href="#" class="btn_line gray">저장하고 다음으로</a>
+                    </div>
+                </div>
+
+                <div class="input_wrap">
+                    <h5>부가정보 입력</h5>
+                    <div class="item">
+                        <dl>
+                            <dt>데이터 위치</dt>
+                            <dd>
+                                <ul class="sub_inputBox">
+                                    <li>
+                                        <div class="per50">
+                                            <div class="subInput_tit">
+                                                <label for="latitude">위도</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <input type="text" name="latitude" id="latitude">
+                                            </div>
+                                        </div>
+                                        <div class="per50">
+                                            <div class="subInput_tit">
+                                                <label for="longitude">경도</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <input type="text" name="longitude" id="longitude">
+                                            </div>
+                                        </div>
+                                        <div class="info_box type2">
+                                            <div class="warning_txt">해당데이터가 생산된 위치정보를 위도와 경도로 입력하여 맵으로 검색할 수 있도록 서비스됩니다.</div>
+                                        </div>
+                                        <div class="info_box type2">
+                                            <div class="warning_txt">위도, 경도정보를 모르신다면 구글맵을 통한 정보수집을 추천해드립니다. * 구글맵에서 원하는 위치를 선택하면 하단부에 좌표값이 표시됩니다.<br>
+                                                <a href="https://www.google.co.kr/maps/@37.053745,125.6553969,5z?hl=ko" target="_blank" title="새창" class="btn_line blue">구글맵 바로가기</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt><label for="datasetAccessMth">접근방법</label></dt>
+                            <dd>
+                                <select name="datasetAccessMth" id="datasetAccessMth" class="mo_100p">
+                                    <option>접근방법 선택</option>
+                                    <option value="01">컨텍</option>
+                                    <option value="02">직접다운로드 </option>
+                                    <option value="03">랜딩페이지 </option>
+                                    <option value="04">기타 </option>
+                                </select>
+                                <div class="guide_txt type2">
+                                    <i class="xi-error"></i>
+                                    <span>해당 연구데이터 원시데이터로 접근할 수 있는 방법을 선택하시면 됩니다.</span>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>기여자</dt>
+                            <dd>
+                                <div class="input_add">
+                                    <ul class="sub_inputBox">
+                                        <li>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="cntrNmKor">기여자명(한글)</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" name="cntrNmKor" id="cntrNmKor">
+                                                </div>
+                                            </div>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="cntrNmEng">기여자명(영문)</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" name="cntrNmEng" id="cntrNmEng">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="orgNm">기관명(한글)</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" name="orgNm" id="orgNm">
+                                                </div>
+                                            </div>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="cntrOrcId">ORCID</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" name="cntrOrcId" id="cntrOrcId">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="addBtn"><span class="blind">추가</span></button>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>DMP</dt>
+                            <dd>
+                                <ul class="sub_inputBox">
+                                    <li>
+                                        <div>
+                                            <div class="subInput_tit top">
+                                                <label for="doi">DOI등록</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <div class="inputBtn_box w100p">
+                                                    <input type="text" name="doi" id="doi">
+                                                    <a href="#" class="btn_def black small">DMP란?</a>
+                                                </div>
+                                                <div class="info_box type2">
+                                                    <i class="xi-error"></i>
+                                                    <span>등록 연구데이터와 관련된 DMP의 DOI정보를 입력해주세요.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt10">
+                                            <div class="subInput_tit top">
+                                                <label for="doiFile">첨부파일 등록</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <input type="file" name="doiFile" id="doiFile">
+                                                <div class="info_box type2">
+                                                    <i class="xi-error"></i>
+                                                    <span>DMP를 오프라인 문서로 작성한경우 파일을 올려주세요.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>관련 URL</dt>
+                            <dd>
+                                <div class="inputSel_box">
+                                    <select id="relSource" name="relSource" title="관련 URL 구분을 선택하세요.">
+                                        <option value="">선택</option>
+                                        <option value="is related to">is related to</option>
+                                        <option value="cited">cited</option>
+                                        <option value="derived from">derived from</option>
+                                    </select>
+                                    <input type="text" id="relTarget" name="relTarget" placeholder="TARGET 예시 : 10.14454/3bpw-w381">
+                                </div>
+                                <div class="info_box type2">
+                                    <i class="xi-error"></i>
+                                    <span>연구데이터와 관련된 URL을 등록할 수 있습니다. 해당 URL의 분류를 선택하시고 URL정보를 입력해주세요.</span>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <script>
+                    /*바이트수 체크와 달력부분 스크립트는 기존에 있던부분 사용*/
+
+                    //Byte check
+                    $(document).on('keyup', '.byteChk', function(e){
+                        var data = $(this).val();
+                        $(this).next().find('.textbyte').text(getBytes(data));
+                    });
+                    function getBytes(str){
+                        var cnt = 0;
+                        for(var i =0; i<str.length;i++) {
+                            cnt += (str.charCodeAt(i) >512) ? 2 : 1;
+                        }
+                        return cnt;
+                    }
+                </script>
+
+
+                <div class="systemBtn_wrap">
+                    <div class="sysBtn_left">
+                        <a href="#" class="btn_def black">저장하고 이전으로</a>
+                    </div>
+                    <a href="#" class="btn_def blue">저장하고 다음으로</a>
+                </div>
+
+                <!-- 컨텐츠 입력 : e -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

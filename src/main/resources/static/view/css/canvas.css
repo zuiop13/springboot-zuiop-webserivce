@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* 1페이지 */
+.canvas_1page {background: url(../images/canvas/page1_bg.svg) no-repeat center center/cover; background-position: 109% 6rem; background-size: 15rem;}
+.canvas_1page2 {background: url(../images/canvas/page1_bg.svg) no-repeat center center/cover; background-position: -33% 8rem; background-size: 50rem;position: fixed; width: 100%; height: 100%; z-index: -1;}
+.volum_wrap {width: 8.125rem; margin: 0 auto; padding: 1.25rem; transform: rotate(180deg);}
+.volum {width: 8.125rem; height: 8.125rem; border-radius: 50%;  position: relative;cursor: pointer; overflow: hidden; margin: 0 auto;transform: translateX(-1.25rem);}
+.value {position: relative; height: 8.125rem; background-color: rgba(3, 199, 255); background-image: linear-gradient(to right, #0675ff, transparent);
+color: #fff; text-align: center; overflow: hidden; border-radius: 50%;}
+.value::after {content: ''; position: absolute; z-index: 3; display: block; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #fff; 
+border-radius: 50%; width: 3.4375rem; height: 3.4375rem; font-size: 1.875rem;}
+.wave { position: relative; width: 100%; height: 100%; border-radius: 50%;}
+.wave::before { content: ""; position: absolute; width: 200%; height: 200%; top: -55%; left: 35%;}
+.wave::after { content: ""; position: absolute; width: 200%; height: 200%; top: -55%; left: 65%;}
+.wave::before { border-radius: 45%; background: rgba(138, 222, 245, 0.4); opacity: .5; animation: wave 10s linear infinite;}
+.wave::after { border-radius: 40%; background: rgba(171, 201, 209, 0.7); opacity: .6; animation: wave2 10s linear infinite;}
+.canvas_title {text-align: center; font-family: 'Montserrat';}
+.canvas_title > h3 {color: #111; font-size: 3.25rem; margin: -1.5rem 0;}
+.canvas_title > span {font-size: 1.25rem; color: #555; font-weight: 400;}
+
+.select_wrap {display: flex; justify-content: space-between; flex-wrap: wrap; padding-top: 5.3125rem; transition: all .3s;}
+.select_box {width: 31.25%; text-align: center; box-shadow: 0px 3px 40px #0679DD1A; border-radius: 15px;  background: #fff;margin-bottom: 1.25rem; transition: all .3s;}
+.select_box:hover {background: transparent linear-gradient(298deg, #1891FC 0%, #3FEACA 100%) 0% 0% no-repeat padding-box; transition: all .3s;}
+.select_box:hover strong,
+.select_box:hover span {color: #fff;  transition: all .3s;}
+.select_box .box_icon {background: url(../images/canvas/1p_01.png) no-repeat center center/cover;}
+.select_box:nth-child(2) .box_icon {background-image: url(../images/canvas/1p_02.png);}
+.select_box:nth-child(3) .box_icon {background-image: url(../images/canvas/1p_03.png);}
+.select_box:nth-child(4) .box_icon {background-image: url(../images/canvas/1p_04.png);}
+.select_box:nth-child(5) .box_icon {background-image: url(../images/canvas/1p_05.png);}
+.select_box:nth-child(6) .box_icon {background-image: url(../images/canvas/1p_06.png);}
+.select_box:hover .box_icon {background: url(../images/canvas/1p_h01.png) no-repeat center center/cover; transition: all .3s;}
+.select_box:nth-child(2):hover .box_icon {background-image: url(../images/canvas/1p_h02.png);}
+.select_box:nth-child(3):hover .box_icon {background-image: url(../images/canvas/1p_h03.png);}
+.select_box:nth-child(4):hover .box_icon {background-image: url(../images/canvas/1p_h04.png);}
+.select_box:nth-child(5):hover .box_icon {background-image: url(../images/canvas/1p_h05.png);}
+.select_box:nth-child(6):hover .box_icon {background-image: url(../images/canvas/1p_h06.png);}
+.select_box > a {display: block;padding-top: 2.5rem;}
+.select_box > a strong {display: block; font-size: 1.375rem; font-weight: bold; color: #111; padding-top: .5rem;}
+.select_box span {padding-bottom: 2.5rem; display: block; font-family: 'Montserrat'; color: #555; margin-top: -.25rem;}
+.box_icon {width: 4.625rem; height: 4.625rem; margin: 0 auto;}
+@keyframes wave {
+0% {transform: translate(-50%, -53%) rotate(0deg);}50%{transform: translate(-50%, -47%) rotate(180deg);}100% {transform: translate(-50%, -53%) rotate(0deg);}}
+@keyframes wave2 {
+0% {transform: translate(-50%, -50%) rotate(0deg);}50% {transform: translate(-50%, -50%) rotate(180deg);}100% {transform: translate(-50%, -50%) rotate(0deg);}}
+
+@media screen and (max-width:990px){ 
+    .select_box {width: 48%;}
+}
+
+@media screen and (max-width:768px){
+    .canvas_title > h3 {font-size: 2.25rem;}
+    .select_box {width: 100%;}
+}

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+    <meta name="robots" content="noindex">
+    <meta name="title" content="국가 연구데이터 플랫폼">
+    <meta name="keywords" content="국가 연구데이터 플랫폼">
+    <meta name="description" content="사이트 설명">
+    <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+    <title>마이드라이브 | 국가 연구데이터 플랫폼 : DataON</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 공통 JS -->
+    <!--[if lt IE 9]>
+    <script src="../js/dist/jquery/html5.js"></script>
+    <![endif]-->
+    <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/cmmn.js"></script>
+    <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+    <!-- 서브 JS -->
+    <script src="../js/sub.js"></script>
+    <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+
+    <!-- fancytree -->
+    <link rel="stylesheet" href="https://dataon.kisti.re.kr/resources/css/dist/tree/ui.fancytree.css" />
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.ui-deps.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.persist.js"></script>
+
+    <!-- context menu -->
+    <link rel="stylesheet" href="https://dataon.kisti.re.kr/resources/css/dist/tree/jquery.contextMenu.css" />
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/jquery/jquery.contextMenu.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.contextMenu.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var FT = $.ui.fancytree;
+
+            $("#tree1, #tree2").fancytree({
+                checkbox: false,
+                selectMode: 1,
+                activate: function(event, data){
+                    var node = data.node;
+                    FT.debug("activate: event=", event, ", data=", data);
+                    if(!$.isEmptyObject(node.data)){
+                        alert("custom node data: " + JSON.stringify(node.data));
+                    }
+                },
+                lazyLoad: function(event, data){
+                    data.result = {url: "ajax-sub2.json"};
+                }
+            });
+
+            $("#tree3, #tree4").fancytree({
+                checkbox: true,
+                selectMode:3,
+                activate: function(event, data){
+                    var node = data.node;
+                    FT.debug("activate: event=", event, ", data=", data);
+                    if(!$.isEmptyObject(node.data)){
+                        alert("custom node data: " + JSON.stringify(node.data));
+                    }
+                },
+                lazyLoad: function(event, data){
+                    data.result = {url: "ajax-sub2.json"};
+                }
+            });
+
+            var fileOption = {
+                "view": {
+                    name: "미리보기", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-eye"></i> ' + item.name);
+                    }
+                },
+                "download": {
+                    name: "다운로드", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-download"></i> ' + item.name);
+                    }
+                },
+                "fast_download": {
+                    name: "고속 다운로드", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-download"></i> ' + item.name);
+                    }
+                },
+                "copy": {
+                    name: "복사", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-documents-o"></i> ' + item.name);
+                    }
+                },
+                "modify": {
+                    name: "수정", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-pen-o"></i> ' + item.name);
+                    }
+                },
+                "delete": {
+                    name: "삭제", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-trash-o"></i> ' + item.name);
+                    }
+                },
+                "url": {
+                    name: "URL 공유", icon: function (opt, $itemElement, itemKey, item) {
+                        $itemElement.html('<i class="xi-share"></i> ' + item.name);
+                    }
+                }
+            }
+
+            //file 컨텍스트 메뉴(목록 우클릭)
+            $.contextMenu({
+                trigger: 'right',
+                selector: ".context_file",
+                items:fileOption,
+                callback: function(cmd, options) {
+                    switch (cmd) {
+                        case 'view':
+                            $('#myDl_1').modal('show');
+                            break;
+                        case 'download':
+                            alert("다운로드");
+                            break;
+                        case 'fast_download':
+                            $('#myDl_2').modal('show');
+                            break;
+                        case 'copy':
+                            $('#myDl_4').modal('show');
+                            break;
+                        case 'modify':
+                            $('#myDl_6').modal('show');
+                            break;
+                        case 'delete':
+                            var delCon = confirm("선택하신 파일을 삭제하시겠습니까?");
+                            if(delCon){
+                                alert("삭제되었습니다.");
+                            }else{
+                                alert("삭제가 취소되었습니다.");
+                            }
+                            break;
+                    }
+                }
+            });
+
+            //...좌클릭
+            $.contextMenu({
+                trigger: 'left',
+                selector: ".myD_etc.fileM",
+                items: fileOption,
+                callback: function(cmd, options) {
+                    switch (cmd) {
+                        case 'view':
+                            $('#myDl_1').modal('show');
+                            break;
+                        case 'download':
+                            alert("다운로드");
+                            break;
+                        case 'fast_download':
+                            $('#myDl_2').modal('show');
+                            break;
+                        case 'copy':
+                            $('#myDl_4').modal('show');
+                            break;
+                        case 'modify':
+                            $('#myDl_6').modal('show');
+                            break;
+                        case 'delete':
+                            var delCon = confirm("선택하신 파일을 삭제하시겠습니까?");
+                            if(delCon){
+                                alert("삭제되었습니다.");
+                            }else{
+                                alert("삭제가 취소되었습니다.");
+                            }
+                            break;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo" class="myD_logo">
+                <a href="#" class="logo_myD_do">
+                    <img src="../images/layout/logo_myDrive_dataon.png" alt="데이터온">
+                </a>
+                <a href="#" class="logo_myD_my">
+                    <img src="../images/layout/logo_myDrive_myd.png" alt="마이드라이브" >
+                </a>
+            </h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div id="n_myDrive" class="n_myDrive">
+            <!-- 모바일용 메뉴 펼침 버튼 -->
+            <!--<a href="#" class="mo_myDmenu">My Drive 메뉴<span class="blind">열기</span></a>-->
+            <div class="n_myDrive_left">
+                <div class="myD_upload">
+                    <a href="#fileUpload" class="file_upBtn" rel="modal:open">파일 업로드</a>
+                </div>
+                <div class="n_myDrive_menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="fav">Favorites</a>
+                            <div class="subM">
+                                <ul>
+                                    <li><a href="#">내등록연구데이터</a></li>
+                                    <li><a href="#">관심연구데이터</a></li>
+                                    <li><a href="#">공유연구데이터</a></li>
+                                    <li>
+                                        <a href="#">커뮤니티</a>
+                                        <ul>
+                                            <li><a href="#">이겨내자 코로나!!(COVID...</a></li>
+                                            <li><a href="#">위성데이터 분석 커뮤니티</a></li>
+                                            <li><a href="#">CCTV 영상 분석</a></li>
+                                            <li><a href="#">재난위험예측</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="file on">Files</a>
+                            <div class="subM">
+                                <div class="file_tree">
+                                    <div id="tree1" class="sampletree">
+                                        <ul id="treeData1">
+                                            <li id="id1" class="folder">MyCanvas
+                                                <div class="treeBtn_Box">
+                                                    <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                    <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                </div>
+                                                <ul>
+                                                    <li id="id1_1" class="folder">workflow
+                                                        <ul>
+                                                            <li id="id1_1_1" class="folder">Clone_Data_Canvas
+                                                                <ul>
+                                                                    <li id="id1_1_1_1">ImageTransfer_1</li>
+                                                                    <li id="id1_1_1_2">Sub-item 1.1.2</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li id="id1_1_2">Sub-item 1.1.2</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="id1_2" class="folder">Sub-item 3.2
+                                                        <ul>
+                                                            <li id="id1_2_1">Sub-item 1.2.1</li>
+                                                            <li id="id1_2_2">Sub-item 1.2.2</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="id2" class="folder">MyCommunities
+                                                <ul>
+                                                    <li id="id2_1" class="folder">Sub-item 2.1
+                                                        <ul>
+                                                            <li id="id2_1_1">Sub-item 2.1.1</li>
+                                                            <li id="id2_1_2">Sub-item 2.1.2</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="id2_2" class="folder">Sub-item 4.2
+                                                        <ul>
+                                                            <li id="id2_2_1">Sub-item 2.2.1</li>
+                                                            <li id="id2_2_2">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_3">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_4">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_5">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_6">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_7">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_8">Sub-item 2.2.2</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="sc">Super Computer</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="myD_volume">
+                    <ul>
+                        <li class="use"><strong>11GB</strong>/1,000GB</li>
+                        <li class="rest">잔여 : 989GB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="n_myDrive_content">
+                <div class="myD_content">
+                    <!-- 마이드라이브 상단 버튼 및 정보 : s -->
+                    <div class="myD_topinfo">
+                        <div class="myD_tiLeft">
+                            <a href="#" class="myD_btn">삭제</a>
+                            <a href="#" class="myD_btn">다운로드</a>
+                            <a href="#" class="myD_btn">복사</a>
+                        </div>
+                        <div class="myD_tiRight">
+                            <ul class="myD_info">
+                                <li>전체 <span>4건</span></li>
+                                <li>현재페이지 <span>1/100</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="myD_list">
+                        <table>
+                            <caption>마이드라이브의 파일 목록으로 게시물 선택, title, size, date, 기타 옵션 항목으로 구분되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:3rem">
+                                <col>
+                                <col style="width:8rem">
+                                <col style="width:8rem">
+                                <col style="width:6rem">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" name="allChk" id="allChk" title="전체선택">
+                                </th>
+                                <th scope="col">Title</th>
+                                <th scope="col" class="text-center">Size</th>
+                                <th scope="col" class="text-center">Date</th>
+                                <th scope="col"><span class="blind">기타 옵션</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="context_file">
+                                <td class="context_file"></td>
+                                <td class="context_file">
+                                    <a href="#" title="상위 폴더로 이동"><i class="xi-arrow-up"></i> 상위 폴더로 이동</a>
+                                </td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr class="context_file">
+                                <td class="context_file"></td>
+                                <td class="context_file">
+                                    <a href="#"><img src="../images/sub/icon_myD_folder.png" alt="폴더" class="folder"> 내등록 연구데이터</a>
+                                </td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center context_file"></td>
+                            </tr>
+                            <tr class="context_file">
+                                <td class="context_file"></td>
+                                <td class="context_file">
+                                    <a href="#"><img src="../images/sub/icon_myD_folder.png" alt="폴더" class="folder"> My Canvas</a>
+                                </td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center context_file"></td>
+                            </tr>
+                            <tr class="context_file">
+                                <td class="context_file"></td>
+                                <td class="context_file">
+                                    <a href="#"><img src="../images/sub/icon_myD_folder.png" alt="폴더" class="folder"> My File</a>
+                                </td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center context_file"></td>
+                            </tr>
+                            <!--<tr class="context_file">
+                                <td class="context_file"></td>
+                                <td class="context_file">
+                                    <a href="#"><i class="xi-folder-open"></i> My File</a>
+                                </td>
+                                <td class="text-center context_file"></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center context_file"></td>
+                            </tr>-->
+                            <tr>
+                                <td class="context_file"><input type="checkbox" id="myDsel_1" class="aChk" title="선택"></td>
+                                <td class="context_file">
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_2" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_file.png" alt="file" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_3" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_hwp.png" alt="hwp" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_4" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_img.png" alt="img" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_5" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_doc.png" alt="doc" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_6" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_ppt.png" alt="ppt" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_7" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_txt.png" alt="txt" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_8" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_xls.png" alt="xls" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_9" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_zip.png" alt="zip" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_10" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_11" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_12" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="myDsel_13" class="aChk" title="선택"></td>
+                                <td>
+                                    <a href="#" class="myD_dtl">
+                                        <strong class="title"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_file"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_file">2020.08.30</td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc fileM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 파일 업로드 레이어팝업 : s -->
+                    <div id="fileUpload" class="layer_def type2">
+                        <div class="layer_content">
+                            <h2 class="title">파일 업로드</h2>
+                            <div class="myD_fileUp_wrap">
+                                <div class="myDfu_box">
+                                    <div class="myDfu_up">
+                                        <!-- 파일 업로드 영역 -->
+                                    </div>
+                                    <div class="myDfu_tree">
+                                        <div class="myDfu_scroll">
+                                            <div class="file_tree">
+                                                <div id="tree4" class="sampletree">
+                                                    <ul id="treeData4" class="ui-fancytree-source fancytree-helper-hidden">
+                                                        <li id="id8" class="folder">MyCanvas
+                                                            <div class="treeBtn_Box">
+                                                                <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                                <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                            </div>
+                                                            <ul>
+                                                                <li id="id8_1" class="folder">workflow
+                                                                    <ul>
+                                                                        <li id="id8_1_1" class="folder">Clone_Data_Canvas
+                                                                            <ul>
+                                                                                <li id="id8_1_1_1">ImageTransfer_1</li>
+                                                                                <li id="id8_1_1_2">Sub-item 1.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id8_1_2">Sub-item 1.1.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id8_2" class="folder">Sub-item 3.2
+                                                                    <ul>
+                                                                        <li id="id8_2_1">Sub-item 1.2.1</li>
+                                                                        <li id="id8_2_2">Sub-item 1.2.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li id="id9" class="folder">MyCommunities
+                                                            <ul>
+                                                                <li id="id9_1" class="folder">Sub-item 2.1
+                                                                    <ul>
+                                                                        <li id="id9_1_1">Sub-item 2.1.1</li>
+                                                                        <li id="id9_1_2">Sub-item 2.1.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id9_2" class="folder">Sub-item 4.2
+                                                                    <ul>
+                                                                        <li id="id9_2_1">Sub-item 2.2.1</li>
+                                                                        <li id="id9_2_2">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_3">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_4">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_5">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_6">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_7">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_8">Sub-item 2.2.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myDfu_btn">
+                                            <a href="#" class="btn_bigDef blue">선택폴더에 저장</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일 업로드 레이어팝업 : e -->
+
+                    <!-- 파일 미리보기 레이어팝업 : s -->
+                    <div id="myDl_1" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">파일 미리보기</h2>
+                            <div class="review_wrap">
+                                <div class="rFile_List">
+                                    <div class="rFile_scroll">
+                                        <div class="file_tree">
+                                            <div id="tree2" class="sampletree">
+                                                <ul id="treeData3" class="ui-fancytree-source fancytree-helper-hidden">
+                                                    <li id="id6" class="folder">MyCanvas
+                                                        <div class="treeBtn_Box">
+                                                            <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                            <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                        </div>
+                                                        <ul>
+                                                            <li id="id6_1" class="folder">workflow
+                                                                <ul>
+                                                                    <li id="id6_1_1" class="folder">Clone_Data_Canvas
+                                                                        <ul>
+                                                                            <li id="id6_1_1_1">ImageTransfer_1</li>
+                                                                            <li id="id6_1_1_2">Sub-item 1.1.2</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li id="id6_1_2">Sub-item 1.1.2</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li id="id6_2" class="folder">Sub-item 3.2
+                                                                <ul>
+                                                                    <li id="id6_2_1">Sub-item 1.2.1</li>
+                                                                    <li id="id6_2_2">Sub-item 1.2.2</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="id7" class="folder">MyCommunities
+                                                        <ul>
+                                                            <li id="id7_1" class="folder">Sub-item 2.1
+                                                                <ul>
+                                                                    <li id="id7_1_1">Sub-item 2.1.1</li>
+                                                                    <li id="id7_1_2">Sub-item 2.1.2</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li id="id7_2" class="folder">Sub-item 4.2
+                                                                <ul>
+                                                                    <li id="id7_2_1">Sub-item 2.2.1</li>
+                                                                    <li id="id7_2_2">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_3">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_4">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_5">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_6">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_7">Sub-item 2.2.2</li>
+                                                                    <li id="id7_2_8">Sub-item 2.2.2</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(function(){
+                                            //파일 미리보기 / 리뷰,메타 탭
+                                            var tab_btn = $(".rFile_review .menu a");
+
+                                            tab_btn.each(function(){
+                                                var t = $(this);
+                                                var id = t.attr("href");
+
+                                                if(t.hasClass("on")){
+                                                    $(id).show();
+                                                }
+                                            });
+
+                                            tab_btn.on("click",function(){
+                                                var t = $(this);
+                                                var id = t.attr("href");
+
+                                                tab_btn.removeClass("on").closest(".rFile_review").find(".review_content>div").hide();
+                                                t.addClass("on").closest(".rFile_review").find(id).show();
+
+                                                return false;
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div class="rFile_review">
+                                    <div class="rFile_top">
+                                        <!-- a태그에 on 클래스를 넣어주면 로드시에 해당 탭이 열린 상태로 보여집니다. -->
+                                        <ul class="menu">
+                                            <li><a href="#reView" class="on">Review</a></li>
+                                            <li><a href="#meta">Meta</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="reView_area">
+                                        <!-- 미리보기를 할 수 없는 파일의 경우 아래 주석부분을 표시해주시면 됩니다. -->
+                                        <!--<div class="noReview">
+                                            <div>
+                                                <img src="../images/sub/icon_review.png" alt="">
+                                                <p>미리보기할 수 없는 파일입니다.</p>
+                                            </div>
+                                        </div>-->
+                                        <div class="review_content">
+                                            <div id="reView">
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                                test test test test test test test test test test test test test test test test test test
+                                            </div>
+                                            <div id="meta">
+                                                <ul class="reviewFile_info">
+                                                    <li>
+                                                        <strong>파일명</strong>
+                                                        <span>파일명입니다.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>확장자</strong>
+                                                        <span>확장자입니다.</span>
+                                                    </li>
+                                                    <li>
+                                                        <strong>파일크기</strong>
+                                                        <span>파일크기입니다.</span>
+                                                    </li>
+                                                </ul>
+
+                                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일 미리보기 레이어팝업 : s -->
+
+                    <!-- 고속다운로드 레이어팝업 : s -->
+                    <div id="myDl_2" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">고속다운로드</h2>
+                            <div class="myD_defBox">
+                                고속다운로드 삽입 영역
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 고속다운로드 레이어팝업 : s -->
+
+                    <!-- 파일복사 레이어팝업 : s -->
+                    <div id="myDl_4" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">파일복사</h2>
+
+                            <div class="myDfile_wrap">
+                                <div class="n_myDrive">
+                                    <div class="n_myDrive_menu2">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="file on">Files</a>
+                                                <div class="subM">
+                                                    <div class="file_tree">
+                                                        <div id="tree3" class="sampletree">
+                                                            <ul id="treeData2" class="ui-fancytree-source fancytree-helper-hidden">
+                                                                <li id="id3" class="folder">MyCanvas
+                                                                    <div class="treeBtn_Box">
+                                                                        <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                                        <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                                    </div>
+                                                                    <ul>
+                                                                        <li id="id3_1" class="folder">workflow
+                                                                            <ul>
+                                                                                <li id="id3_1_1" class="folder">Clone_Data_Canvas
+                                                                                    <ul>
+                                                                                        <li id="id3_1_1_1">ImageTransfer_1</li>
+                                                                                        <li id="id3_1_1_2">Sub-item 1.1.2</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li id="id3_1_2">Sub-item 1.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id3_2" class="folder">Sub-item 3.2
+                                                                            <ul>
+                                                                                <li id="id3_2_1">Sub-item 1.2.1</li>
+                                                                                <li id="id3_2_2">Sub-item 1.2.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id4" class="folder">MyCommunities
+                                                                    <ul>
+                                                                        <li id="id4_1" class="folder">Sub-item 2.1
+                                                                            <ul>
+                                                                                <li id="id4_1_1">Sub-item 2.1.1</li>
+                                                                                <li id="id4_1_2">Sub-item 2.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id4_2" class="folder">Sub-item 4.2
+                                                                            <ul>
+                                                                                <li id="id4_2_1">Sub-item 2.2.1</li>
+                                                                                <li id="id4_2_2">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_3">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_4">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_5">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_6">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_7">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_8">Sub-item 2.2.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sc">Super Computer</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">선택폴더에 복사</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일복사 레이어팝업 : e -->
+
+                    <!-- 하위폴더생성 레이어팝업 : s -->
+                    <div id="myDl_5" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">하위 폴더 생성</h2>
+                            <table class="tbl">
+                                <caption>하위 폴더를 생성하는 표로, 경로, 폴더명으로 구분되어 있습니다.</caption>
+                                <colgroup>
+                                    <col style="width:10rem">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">경로</th>
+                                    <td class="text-left">MyFiles/GBTest</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="folder_name">폴더명</label></th>
+                                    <td class="text-left"><input type="text" name="folder_name" id="folder_name" class="w100p"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">생성</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 하위폴더생성 레이어팝업 : e -->
+
+                    <!-- 수정 레이어팝업 : s -->
+                    <div id="myDl_6" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">폴더 및 파일 수정</h2>
+                            <table class="tbl">
+                                <caption>폴더 및 파일의 파일명, 첨부파일등을 수정하는 표 입니다.</caption>
+                                <colgroup>
+                                    <col style="width:10rem">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">경로</th>
+                                    <td class="text-left">MyFiles/GBTest</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">기존파일명</th>
+                                    <td class="text-left">푸리에변환적외선분광</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="file_name">새로운 파일명</label></th>
+                                    <td class="text-left"><input type="text" name="file_name" id="file_name" class="w100p"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="file">첨부파일</label></th>
+                                    <td class="text-left">
+                                        <input type="file" name="file" id="file" class="w100p">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">수정</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 수정 레이어팝업 : e -->
+
+                    <!-- 페이징 : s -->
+                    <!--<div class="board_pager">
+                        <span class="inner">
+                            <a href="#" class="pageFirst">
+                                <i class="xi-angle-left-min"></i>
+                                <span class="blind">첫 페이지</span>
+                            </a>
+                            <a href="#" class="pagePrev">
+                                <i class="xi-angle-left-min"></i>
+                                <span class="blind">이전 페이지</span>
+                            </a>
+                            <a href="#" class="pageNow" title="1page">
+                                <strong>1</strong>
+                                <span class="blind">현재 페이지</span>
+                            </a>
+                            <a href="#" class="pageNone">2</a>
+                            <a href="#" class="pageNone">3</a>
+                            <a href="#" class="pageNone">4</a>
+                            <a href="#" class="pageNone">5</a>
+                            <a href="" class="pageNext">
+                                <i class="xi-angle-right-min"></i>
+                                <span class="blind">다음 페이지</span>
+                            </a>
+                            <a href="" class="pageLast">
+                                <i class="xi-angle-right-min"></i>
+                                <span class="blind">마지막 페이지</span>
+                            </a>
+                        </span>
+                    </div>-->
+                    <!-- 페이징 : e -->
+
+
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    //좌측 메뉴 영역 리사이즈
+                    $(".n_myDrive_left").resizable({
+                        minWidth:266,
+                        autoHide: true
+                    });
+
+                    //브라우저 리사이즈 할 경우 화면 높이 조정(푸터제외하고 헤더포함 전체화면 높이)
+                    myD_left();
+                    $(window).resize(function(){
+                        myD_left();
+                    });
+
+                    myDrive_menu(".n_myDrive_menu>ul"); //마이드라이브 메뉴
+                    myDrive_menu(".n_myDrive_menu2>ul"); //파일복사 메뉴
+//                    myDrive_moMenu();   //마이드라이브 메뉴 반응형(모바일)
+                    myD_slide();    //상세첨부파일 show/hide
+                    myD_allChk();   //체크박스 전체선택
+                });
+            </script>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+html {
+	overflow: hidden;
+}
+
+.myd-overflow-xy {
+	height: calc(100vh - 54px - 48px - 36px); overflow-y: auto; overflow-x: auto;
+}
+
+.myd-overflow-y {
+	height: calc(100vh - 54px - 48px - 36px); overflow-y: auto; overflow-x: hidden;
+}
+
+.nopreview_bg {
+	background: url('../images/mydrive/nopreview.png') center 75px no-repeat;
+	padding-bottom:5rem;
+}
+
+.blank_bg {
+	background: url('../images/cmmn/img_blank.png') center 75px no-repeat;
+	padding-bottom:5rem;
+}
+
+/* 마이드라이브 저장소 사용현황 */
+.mydstorageinfo { background: rgba(0, 0, 0, 0.1); padding: 5px; margin-left: 0px; }
+
+/* 마이드라이브 업로드 파일목록 */
+.myd-upfile{border: solid 1px #ddd;padding: 10px; border-radius:3px;margin-bottom: 2px; background: linear-gradient(#fff,#f9f9f9); min-width:100%;}
+.myd-upfile:hover{border: solid 1px #aaa; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;}
+.myd-upfile ul{display: inline-block; clear: both;width: 100%;}
+.myd-upfile ul li{float: left;}
+.myd-upfile ul li:nth-child(1){padding:5px; color: #000;}
+.myd-upfile ul li:nth-child(1) span{font-size: 0.813rem;color: #999;}
+.myd-upfile ul li:nth-child(2){font-size: 0.875rem;padding-top:8px; float: right;}
+
+/* 공유데이터 좌측 메뉴 */
+.shrleftm2{float: left!important;width: 250px; background-color: #f5f5f5; border-right:solid 1px #ddd; height: 100%;}
+.shrleftm2 ul{}
+.shrleftm2 ul li{font-size: 0.94rem; font-weight: 600; color: #333; line-height: 3.1rem;position: relative; border-top: solid 1px #ddd;}
+.shrli:hover{background-color: #d3e2e5;transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;cursor: pointer;}
+.shrleftm2 ul li:last-child{border-bottom: solid 1px #ddd;}
+.shrleftm2-btn{position: absolute;top: 0px; right: 20px;}
+.shrleftm2-open {
+	background: url('/portal/resources/images/workflow/open-btn.png') center 75px no-repeat;
+	padding-bottom:5rem;
+}
+.shrleftm2-close {
+	background: url('/portal/resources/images/workflow/close-btn.png') center 75px no-repeat;
+	padding-bottom:5rem;
+}
+.shrleftm2 ul li ul{}
+.shrleftm2 ul li ul li{font-size: 0.875rem; color: #444; line-height: 2.9rem; background-color: #ebebeb; margin-left:-15px; padding-left: 30px;}
+.shrleftm2 ul li ul li:last-child{border-bottom:none; }
+.shrleftm2 ul li ul li ul{}
+.shrleftm2 ul li ul li ul li{font-size: 0.813rem; color: #444;line-height: 2.9rem!important; background-color: #e7e7e7!important; padding-left:35px;}
+.shrleftm2 ul li ul li ul li.select1{background-color: #d3e2e5!important;}
+.shrleftm2 ul li ul li ul li:last-child{border-bottom:none; }
+.shrleftm2 .select {background-color: #d3e2e5!important;}
+
+.modal-full {
+	max-width : 95vw;
+}
+
+.mydlistbox-pr { padding-right: 46px !important; }
+.mydlistbox-pl { padding-left: 37px !important; }
+
+
+
+/* 마이드라이브 좌측메뉴 - 사용안함 */
+#appstoreTree ul li {
+   font-weight: 600;
+   position: relative;
+}
+
+#appstoreTree ul.fancytree-container li {
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+
+#appstoreTree>ul>li {
+   font-size: 0.94rem;
+   color: #333;
+   line-height: 3.0rem;
+   border-bottom: inset 1px #dfdfdf;
+   background: #fff;
+}
+
+#appstoreTree>ul>li[aria-expanded=true]::after {
+   background-image: url(../images/cmmn/open-btn.png);
+   background-position: left;
+   background-repeat: no-repeat;
+   background-size: 10px;
+   width: 15px;
+   height: 8px;
+   display: block;
+   content: ' ';
+   position: absolute;
+   top: 20px;
+   right: 20px;
+}
+
+#appstoreTree>ul>li[aria-expanded=false]::after {
+   background-image: url(../images/cmmn/close-btn.png);
+   background-position: left;
+   background-repeat: no-repeat;
+   background-size: 10px;
+   width: 15px;
+   height: 8px;
+   display: block;
+   content: ' ';
+   position: absolute;
+   top: 20px;
+   right: 20px;
+}
+
+#appstoreTree>ul>li span.fancytree-expander {
+   margin-left: 0;
+}
+
+#appstoreTree>ul>li span.fancytree-icon, #appstoreTree>ul>li span.fancytree-checkbox,
+   #appstoreTree>ul>li span.fancytree-expander, #appstoreTree>ul>li span.fancytree-custom-icon
+   {
+   margin-top: 1rem;
+}
+
+#appstoreTree span.fancytree-empty,
+#appstoreTree span.fancytree-vline,
+#appstoreTree span.fancytree-expander,
+#appstoreTree span.fancytree-icon,
+#appstoreTree span.fancytree-checkbox,
+#appstoreTree span.fancytree-drag-helper-img,
+#appstoreTree #fancytree-drop-marker {
+   background-repeat: unset;
+   background-position: unset;
+   background-image: none;
+   background-position: unset;
+}
+
+#appstoreTree ul.fancytree-container ul {
+   padding: 0; 
+}
+
+#appstoreTree>ul>li .fancytree-icon {
+   background-image: url(../images/workspace/category-icon.png);
+   background-position: left;
+   width: 19px;
+   height: 22px;
+}
+
+#appstoreTree>ul>li span.fancytree-title {
+   padding-left: 0.8rem;
+}
+
+#appstoreTree>ul>li>ul>li {
+   font-size: 0.875rem;
+   color: #444;
+   line-height: 2.5rem;
+   background-color: #fff;
+   margin-left: 0;
+}
+
+#appstoreTree>ul>li>ul>li span.fancytree-expander {
+   margin-left: 0.5rem;
+}
+
+#appstoreTree>ul>li>ul>li .fancytree-icon {
+   background-image: url(../images/workspace/subdepth-icon.png);
+   background-position: left;
+   width: 14px;
+   height: 11px;
+}
+
+
+#appstoreTree>ul>li ul {
+   border-top: 1px outset #dfdfdf;
+   /* border-bottom: 1px inset #dfdfdf; */
+}
+
+#appstoreTree>ul>li>ul>li>ul>li {
+   font-size: 0.813rem;
+   color: #444;
+   line-height: 2.5rem !important;
+   background: #f5f5f5;
+}
+
+#appstoreTree>ul>li>ul>li>ul>li span.fancytree-expander {
+   margin-left: 1.3rem;
+}
+
+#appstoreTree fancytree-plain span.fancytree-title {
+   border: none;
+}
+
+#appstoreTree span.fancytree-expander {
+   margin-right: 0.5rem;
+}
+
+#appstoreTree .fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-focused span.fancytree-title
+   {
+   border-color: transparent;
+}
+
+#appstoreTree .fancytree-plain span.fancytree-active.fancytree-ico-c,
+   .fancytree-plain span.fancytree-selected.fancytree-ico-c {
+   background-color: #cce8ff;
+   border-color: #cce8ff;
+}
+
+#appstoreTree .fancytree-plain span.fancytree-active ul li,
+   .fancytree-plain span.fancytree-selected   ul li{
+   background-color: transparent;
+   border-color: transparent;
+}
+
+#appstoreTree .fancytree-plain span.fancytree-node span.fancytree-selected span.fancytree-title
+   {
+   font-style: normal;
+}
+
+#appstoreTree .fancytree-plain span.fancytree-node:hover span.fancytree-title {
+   background-color: transparent;
+   border-color: transparent;
+}
+
+#appstoreTree .fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-active span.fancytree-title,
+#appstoreTree .fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-selected span.fancytree-title
+   {
+   background-color: transparent;
+   border-color: transparent;
+}
+
+#appstoreTree>ul>li>ul>li>ul>li span.fancytree-active span.fancytree-title,
+#appstoreTree>ul>li>ul>li>ul>li span.fancytree-selected span.fancytree-title
+   {
+   background-color: transparent !important;
+}
+
+#appstoreTree span.fancytree-node.fancytree-ico-c:hover {
+   background-color: #cce8ff;
+}
