@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/*
+//heading
+@mixin heading($fz, $w, $h, $color){ font-size:$fz; position: relative;padding-left: $w + 7px; &::before{content: '';background-color: $color;width: $w;height: $h;position: absolute;left: 0; top:$fz*.75 - ($h/2);}
+}
+//bullet
+@mixin bul($w, $h, $color, $r){ position: relative;padding-left: $w + 7px; &::before{content: '';background-color: $color;width: $w;height: $h;border-radius:$r;position: absolute;left: 0; top:15px*.7 - ($h/2);}//15px은 콘텐츠 기본사이즈
+}
+*/
+/* ------------------------------------------------------------ (주) 이즈소프트 (http://easesoft.kr) 2016/02/16 SYH 사용 예는 guide 사이트 에서 확인 2019/03/26 JYC ------------------------------------------------------------ */
+/* reset.css(plan-i standard) */
+html { font-size: 20px; -webkit-box-sizing: border-box; box-sizing: border-box; overflow-x: hidden; }
+
+*, *::before, *::after { -webkit-box-sizing: inherit; box-sizing: inherit; }
+
+body { margin: 0; padding: 0; font-size: .8rem; font-weight: 400; font-family: "Noto Sans KR"; line-height: 1.25; color: #555; }
+
+ul, ol, li, dl, dt, dd { margin: 0; padding: 0; list-style: none; }
+
+p, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img { border: 0; vertical-align: middle; font-size: 0; max-width: 100%; }
+
+table { border-collapse: collapse; width: 100%; }
+
+caption, legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+select, input, textarea { color: #555; font-size: .8rem; }
+
+select, input { vertical-align: middle; }
+
+address, em, i { font-style: normal; }
+
+button { border: 0; padding: 0; background: none; cursor: pointer; }
+
+hr { margin: 0; border: none; padding: 0; display: block; }
+
+form, figure, figcaption { padding: 0; margin: 0; }
+
+fieldset { border: none; padding: 0; margin: 0; }
+
+input[type="submit"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+header, footer, article, section, aside, nav, main { display: block; }
+
+button, input, optgroup, select, textarea { font-family: inherit; font-size: inherit; font-weight: inherit; margin: 0; }
+
+/* screen reader only */
+.sr-only, .hidden, .blind, .IR { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+/*# sourceMappingURL=basic.css.map */

@@ -1,0 +1,246 @@
+.markdown-wrap {
+	clear: both;
+	overflow: auto;
+	word-wrap: break-word;
+	padding: 2rem;
+}
+
+.markdown-wrap ul, .markdown-wrap ol {
+	padding: 5px 0 5px 2.5em;
+	font-weight: normal;
+	margin-left: 0;
+}
+
+.markdown-wrap li {
+	margin-bottom: 5px;
+}
+
+.markdown-wrap li>ul {
+	margin-bottom: 0;
+	padding: 5px 0 2px 2.5em;
+}
+
+.markdown-wrap li>ul :last-of-type {
+	padding-bottom: 0;
+}
+
+.markdown-wrap li>ul pre {
+	padding-bottom: 10px !important;
+}
+
+.markdown-wrap li>p {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.markdown-wrap ul>li>p {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.markdown-wrap a {
+	color: #4183c4;
+	text-decoration: none;
+}
+
+.markdown-wrap a:hover {
+	color: #4183c4;
+	text-decoration: underline;
+}
+
+.markdown-wrap a:active {
+	color: #4183c4;
+	text-decoration: none;
+}
+
+.markdown-wrap h1 {
+	font-size: 2em;
+	margin-top: 1.5em;
+	margin-bottom: 15px;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #eee;
+	width: 95%;
+	font-weight: 600;
+}
+
+.markdown-wrap h1 .head-anchor {
+	margin-left: 3px;
+	opacity: 0;
+}
+
+.markdown-wrap h1:hover .head-anchor {
+	opacity: 1;
+}
+
+.markdown-wrap h2 {
+	margin: 1.2em 0 15px;
+	font-size: 1.5em;
+	width: 95%;
+}
+
+.markdown-wrap h2 .head-anchor {
+	margin-left: 3px;
+	opacity: 0;
+}
+
+.markdown-wrap h2:hover .head-anchor {
+	opacity: 1;
+}
+
+.markdown-wrap h3 {
+	margin: 1em 0 5px;
+	font-size: 1.4em;
+	padding: 0;
+}
+
+.markdown-wrap h3 .head-anchor {
+	margin-left: 3px;
+	opacity: 0;
+}
+
+.markdown-wrap h3:hover .head-anchor {
+	opacity: 1;
+}
+
+.markdown-wrap h4 {
+	font-size: 1.25em;
+	margin-top: 1.2em;
+	padding: 0;
+}
+
+.markdown-wrap h4 .head-anchor {
+	margin-left: 3px;
+	opacity: 0;
+}
+
+.markdown-wrap h4:hover .head-anchor {
+	opacity: 1;
+}
+
+.markdown-wrap h5 {
+	font-size: 1em;
+	margin-top: 20px;
+}
+
+.markdown-wrap h5 .head-anchor {
+	margin-left: 3px;
+	opacity: 0;
+}
+
+.markdown-wrap h5:hover .head-anchor {
+	opacity: 1;
+}
+
+.markdown-wrap hr {
+	height: 1px;
+	margin: 10px 0;
+	border: 0;
+	color: #ccc;
+	background-color: #ccc;
+}
+
+.markdown-wrap p {
+	margin: 15px 0;
+	line-height: 1.6em;
+}
+
+.markdown-wrap blockquote p {
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+.markdown-wrap code {
+	padding: 5px 5px 2px 5px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
+.markdown-wrap code .title {
+	font-size: inherit;
+}
+
+.markdown-wrap blockquote {
+	border-left: 4px solid #DDD;
+	padding: 0 15px;
+	color: #777;
+}
+
+.markdown-wrap li>img {
+	max-width: 80%;
+}
+
+.markdown-wrap img {
+	max-width: 100%;
+	margin: 10px 0;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.markdown-wrap ul {
+	line-height: 20px;
+	list-style: disc;
+}
+
+.markdown-wrap li {
+	line-height: 1.6em;
+}
+
+.markdown-wrap ul ul, .markdown-wrap ol ul {
+	list-style: circle;
+}
+
+.markdown-wrap ul ul ul, .markdown-wrap ol ul ul, .markdown-wrap ol ol ul, .markdown-wrap ul ol ul {
+	list-style: square;
+}
+
+.markdown-wrap ol {
+	line-height: 1.6em;
+	list-style: decimal;
+}
+
+.markdown-wrap pre {
+	font-size: 1em;
+	background-color: #EFEFEF;
+	padding: 10px;
+	margin: 10px 0;
+	word-break: normal;
+	border: none;
+}
+
+.markdown-wrap pre code {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.markdown-wrap table {
+	border-collapse: collapse;
+	margin: 15px 15px;
+}
+
+.markdown-wrap table th {
+	padding: 5px;
+	border: 1px solid #dcddde;
+	background-color: #f7f7f7;
+	min-width: 45px;
+}
+
+.markdown-wrap table td {
+	padding: 5px;
+	border: 1px solid #dcddde;
+	word-break: break-all;
+}
+
+.markdown-wrap.markdown-before {
+	visibility: hidden;
+}
+
+.markdown-wrap .popover {
+	max-width: 400px;
+}
+
+.markdown-wrap .popover-title {
+	font-size: 14px;
+	font-weight: bold;
+}

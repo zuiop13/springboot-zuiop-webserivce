@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+    <meta name="robots" content="noindex">
+    <meta name="title" content="국가 연구데이터 플랫폼">
+    <meta name="keywords" content="국가 연구데이터 플랫폼">
+    <meta name="description" content="사이트 설명">
+    <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+    <title>데이터등록 | 등록 | 국가 연구데이터 플랫폼 : DataON</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 공통 JS -->
+    <!--[if lt IE 9]>
+    <script src="../js/dist/jquery/html5.js"></script>
+    <![endif]-->
+    <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/cmmn.js"></script>
+    <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+    <!-- 서브 JS -->
+    <script src="../js/sub.js"></script>
+    <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+</head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">데이터 등록</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="loc_row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>등록</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>데이터등록</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="container">
+            <div id="content">
+                <!-- 컨텐츠 입력 : s -->
+
+                <h3 class="title">연구데이터 등록</h3>
+
+                <!-- 아래 a태그에 class="on"을 주면 페이지 로딩 후 펼쳐진 상태가 됩니다. -->
+                <div class="slide_box">
+                    <a href="#">언어선택 <span>OPEN</span></a>
+                    <div class="slide_item">
+                        <p>DataON은 글로벌서비스를 지향합니다.<br>
+                            이에따라 영어를 주 언어로 제공하며, 이용자가 원할경우 부 언어를 지정할 수 있습니다. 등록하시는 데이터셋의 언어를 선택해주세요.</p>
+                        <ul class="lang_list">
+                            <li>
+                                <label for="lang">주 언어</label>
+                                <select name="lang" id="lang">
+                                    <option value="ko" selected>한국어</option>
+                                    <option value="eng">영어</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="sub_lang">부 언어</label>
+                                <select name="sub_lang" id="sub_lang">
+                                    <option value="ko">한국어</option>
+                                    <option value="eng">영어</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info_box">
+                    <i class="xi-error"></i>
+                    <span>연구데이터의 등록은 총 5단계를 통해 정보를 수집합니다. 많은 시간이 소요될 수 있으므로 충분히 준비를 하신 후 진행을 부탁드립니다.</span>
+                </div>
+
+                <!-- 현재 단계 구분은 li태그에 class="on" 을 넣어주시면 됩니다. -->
+                <ul class="step_guide">
+                    <li>
+                        <div class="step_item">
+                            <i>1</i>
+                            <strong>기본정보</strong>
+                            <em>필수 14/14</em>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>2</i>
+                            <strong>데이터 정보</strong>
+                            <em>필수 14/<span>0</span></em>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>3</i>
+                            <strong>라이센스 관리</strong>
+                            <em>필수</em>
+                        </div>
+                    </li>
+                    <li class="on">
+                        <div class="step_item">
+                            <i>4</i>
+                            <strong>과제/논문 정보</strong>
+                            <div class="tip_layer">
+                                <strong>Tip</strong>
+                                <p>필수입력인 3단계까지 입력하셨습니다. 추가정보를 입력하신다면 많은 도움이 되지만 SKIP도 가능합니다.</p>
+                                <div class="tar">
+                                    <a href="#a" class="skip">SKIP 하기</a>
+                                </div>
+                                <a href="#a" class="tip_close"><span class="blind">닫기</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>5</i>
+                            <strong>부가정보</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step_item">
+                            <i>6</i>
+                            <strong>등록완료</strong>
+                        </div>
+                    </li>
+                </ul>
+                <div class="data_tab">
+                    <ul class="data_tabMenu clear">
+                        <li>
+                            <a href="#" class="on" title="활성 메뉴">과제정보연계</a>
+                            <div class="data_tabSub">
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 01</span> 등록방법</h4>
+                                    </div>
+                                </div>
+
+                                <div class="input_wrap">
+                                    <div class="item">
+                                        <dl>
+                                            <dt>등록방법 선택</dt>
+                                            <dd>
+                                                <ul class="chk_list">
+                                                    <li>
+                                                        <input type="radio" name="project" id="project1" checked>
+                                                        <label for="project1">NTIS 과제검색</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="project" id="project2">
+                                                        <label for="project2">직접등록</label>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 02</span> 과제등록</h4>
+                                    </div>
+                                </div>
+                                <div class="gray_box tac mb">
+                                    <a href="#ntisL1" class="btn_def blue sch" rel="modal:open">NTIS과제검색</a>
+                                </div>
+
+                                <!-- 모달(ntis과제 검색) : s -->
+                                <div id="ntisL1" class="layer_def">
+                                    <div class="layer_content">
+                                        <strong class="title">NTIS 과제검색</strong>
+                                        <div class="board_info">
+                                            <div class="board_sch">
+                                                <fieldset>
+                                                    <legend>NTIS과제 검색</legend>
+                                                    <select name="searchCondition" id="searchCondition" title="검색어 분류를 선택하세요.">
+                                                        <option value="">검색선택</option>
+                                                        <option value="1">NTIS번호</option>
+                                                        <option value="2">프로젝트명</option>
+                                                        <option value="3">책임자</option>
+                                                        <option value="4">수행기관</option>
+                                                    </select>
+                                                    <input type="text" name="searchKeyword" id="searchKeyword" title="검색어를 입력하세요.">
+                                                    <button type="submit" class="brd_schBtn">검색</button>
+                                                </fieldset>
+                                            </div>
+                                            <p class="page_info">
+                                                전체 : <b>10,374</b>건, <b>1</b>/<span>1038</span>
+                                            </p>
+                                        </div>
+
+                                        <!-- 게시판 : s -->
+                                        <div class="tstyle_list">
+                                            <div class="blind">NTIS 과제 목록</div>
+                                            <div class="dhead">
+                                                <ul>
+                                                    <li class="W8">번호</li>
+                                                    <li class="W13">NTIS번호</li>
+                                                    <li class="W8">기준년도</li>
+                                                    <li class="b_title">프로젝트명</li>
+                                                    <li class="W8">책임자</li>
+                                                    <li class="W18">수행기관</li>
+                                                    <li class="W10">선택</li>
+                                                </ul>
+                                            </div>
+                                            <!-- 내용이 없는 경우 -->
+                                            <!--<div class="tac">
+                                                <p class="p10">등록된 글이 없습니다.</p>
+                                            </div>-->
+                                            <div class="dbody">
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="W13" data-title="NTIS번호">1475009977</li>
+                                                    <li class="W8" data-title="기준년도">2020</li>
+                                                    <li class="b_title" data-title="프로젝트명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W8" data-title="책임자">가나다</li>
+                                                    <li class="W18" data-title="수행기관">서울대학교 산학협력단</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- 게시판 : e -->
+
+                                        <!-- 게시판 페이징 : s -->
+                                        <div class="board_pager">
+                                            <span class="inner">
+                                                <a href="#" class="pageFirst">
+                                                    <i class="xi-angle-left-min"></i>
+                                                    <span class="blind">첫 페이지</span>
+                                                </a>
+                                                <a href="#" class="pagePrev">
+                                                    <i class="xi-angle-left-min"></i>
+                                                    <span class="blind">이전 페이지</span>
+                                                </a>
+                                                <a href="#" class="pageNow" title="1page">
+                                                    <strong>1</strong>
+                                                    <span class="blind">현재 페이지</span>
+                                                </a>
+                                                <a href="#" class="pageNone">2</a>
+                                                <a href="#" class="pageNone">3</a>
+                                                <a href="#" class="pageNone">4</a>
+                                                <a href="#" class="pageNone">5</a>
+                                                <a href="" class="pageNext">
+                                                    <i class="xi-angle-right-min"></i>
+                                                    <span class="blind">다음 페이지</span>
+                                                </a>
+                                                <a href="" class="pageLast">
+                                                    <i class="xi-angle-right-min"></i>
+                                                    <span class="blind">마지막 페이지</span>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <!-- 게시판 페이징 : e -->
+
+                                    </div>
+                                </div>
+                                <!-- 모달(ntis과제 검색) : e -->
+
+                                <div class="input_wrap">
+                                    <div class="item">
+                                        <dl>
+                                            <dt>제목</dt>
+                                            <dd>
+                                                <input type="text" id="actTitleKor" name="actTitleKor" maxlength="256" title="한글제목" placeholder="한글" onkeyup="engKorChkWord(this, 256);" class="byteChk">
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/256byte</span>
+                                                </div>
+                                                <input type="text" id="actTitleEng" name="actTitleEng" maxlength="256" title="영문제목" placeholder="영문" onkeyup="engKorChkWord(this, 256);" class="byteChk mt">
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/256byte</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="actExplKor">설명</label></dt>
+                                            <dd>
+                                                <textarea id="actExplKor" name="actExplKor" rows="5" maxlength="512" title="한글설명" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="Kywd">키워드(한글)<em class="point">*<span class="blind">필수</span></em></label></dt>
+                                            <dd>
+                                                <ul class="keyword">
+                                                    <li>키워드1 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드2 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드3 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드4 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                </ul>
+                                                <input type="text" name="Kywd" id="Kywd">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="engKywd">키워드(영문)<em class="point">*<span class="blind">필수</span></em></label></dt>
+                                            <dd>
+                                                <ul class="keyword">
+                                                    <li>키워드1 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드2 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드3 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드4 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                </ul>
+                                                <input type="text" name="engKywd" id="engKywd">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="actMnsb">과학기술표준분류</label></dt>
+                                            <dd>
+                                                <input type="text" id="actMnsb" name="actMnsb" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="orderOrg">발주기관</label></dt>
+                                            <dd>
+                                                <input type="text" id="orderOrg" name="orderOrg" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="actPrfrmOrg">과제수행기관</label></dt>
+                                            <dd>
+                                                <input type="text" id="actPrfrmOrg" name="actPrfrmOrg" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="actMgntOrg">과제관리기관</label></dt>
+                                            <dd>
+                                                <input type="text" id="actMgntOrg" name="actMgntOrg" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+
+                                    <h5>과제정보 등록</h5>
+                                    <div class="item border_t">
+                                        <dl>
+                                            <dt>과제 책임자</dt>
+                                            <dd>
+                                                <ul class="sub_inputBox">
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ofcrNmKor">책임자명(한글)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ofcrNmKor" id="ofcrNmKor">
+                                                            </div>
+                                                        </div>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ofcrNmEng">책임자명(영문)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ofcrNmEng" id="ofcrNmEng">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ofcrOrgNm">기관명(한글)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ofcrOrgNm" id="ofcrOrgNm">
+                                                            </div>
+                                                        </div>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ofcrRrno">과학기술인등록번호</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ofcrRrno" id="ofcrRrno">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt>과제 참여자</dt>
+                                            <dd>
+                                                <ul class="sub_inputBox">
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ptcpNmKor">참여자명(한글)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ptcpNmKor" id="ptcpNmKor">
+                                                            </div>
+                                                        </div>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ptcpNmEng">참여자명(영문)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ptcpNmEng" id="ptcpNmEng">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="ptcpOrgNm">기관명(한글)</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="ptcpOrgNm" id="ptcpOrgNm">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 03</span> 과제등록</h4>
+                                    </div>
+                                    <div class="titA_right">
+                                        <a href="#" class="btn_line blue">추가등록</a>
+                                    </div>
+                                </div>
+                                <div class="gray_box tal">
+                                    <p class="warning_txt">등록한 관련 과제/논문 정보는 관리자의 승인을 통해 서비스됩니다. 한건만 등록하신다면 “승인요청”버튼을,  한번에 더 많은 과제/논문을 등록하고 싶다면 “추가등록”버튼을 클릭해주세요.</p>
+                                    <p class="warning_txt">추가등록시 입력하신 정보는 하단부 리스트에 추가됩니다. 여러정보를 한번에 신청하실경우 리스트 아래 “일괄 승인요청”버튼을 클릭해주세요.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">논문정보연계</a>
+                            <div class="data_tabSub">
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 01</span> 등록방법</h4>
+                                    </div>
+                                </div>
+
+                                <div class="input_wrap">
+                                    <div class="item">
+                                        <dl>
+                                            <dt>등록방법 선택</dt>
+                                            <dd>
+                                                <ul class="chk_list">
+                                                    <li>
+                                                        <input type="radio" name="project2" id="project3" checked>
+                                                        <label for="project3">ScienceON 논문검색</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="project2" id="project4">
+                                                        <label for="project4">직접등록</label>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 02</span> 과제등록</h4>
+                                    </div>
+                                </div>
+                                <div class="gray_box tac mb">
+                                    <a href="#scienceL1" class="btn_def blue sch" rel="modal:open">ScienceON 논문검색</a>
+                                </div>
+
+                                <!-- 모달(science 논문 검색) : s -->
+                                <div id="scienceL1" class="layer_def">
+                                    <div class="layer_content">
+                                        <strong class="title">ScienceON 논문검색</strong>
+                                        <div class="board_info">
+                                            <div class="board_sch">
+                                                <fieldset>
+                                                    <legend>ScienceON 논문검색</legend>
+                                                    <select name="searchCondition2" id="searchCondition2" title="검색어 분류를 선택하세요.">
+                                                        <option value="">검색선택</option>
+                                                        <option value="1">논문명</option>
+                                                        <option value="2">저자</option>
+                                                        <option value="3">저널명</option>
+                                                    </select>
+                                                    <input type="text" name="searchKeyword2" id="searchKeyword2" title="검색어를 입력하세요.">
+                                                    <button type="submit" class="brd_schBtn">검색</button>
+                                                </fieldset>
+                                            </div>
+                                            <p class="page_info">
+                                                전체 : <b>10,374</b>건, <b>1</b>/<span>1038</span>
+                                            </p>
+                                        </div>
+
+                                        <!-- 게시판 : s -->
+                                        <div class="tstyle_list">
+                                            <div class="blind">ScienceON 논문 목록</div>
+                                            <div class="dhead">
+                                                <ul>
+                                                    <li class="W8">번호</li>
+                                                    <li class="b_title">논문명</li>
+                                                    <li class="W10">제1저자</li>
+                                                    <li class="W18">저널명</li>
+                                                    <li class="W10">발행년도</li>
+                                                    <li class="W10">선택</li>
+                                                </ul>
+                                            </div>
+                                            <!-- 내용이 없는 경우 -->
+                                            <!--<div class="tac">
+                                                <p class="p10">등록된 글이 없습니다.</p>
+                                            </div>-->
+                                            <div class="dbody">
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="W8" data-title="번호">10374</li>
+                                                    <li class="b_title" data-title="논문명">
+                                                        <span class="ellipsis">건강기능식품의 부정원재료 진위판별 연구(1)</span>
+                                                    </li>
+                                                    <li class="W10" data-title="제1저자">가나다</li>
+                                                    <li class="W18" data-title="저널명">서울대학교</li>
+                                                    <li class="W10" data-title="발행년도">2020</li>
+                                                    <li class="W10 button">
+                                                        <a href="#a" class="btn_tbl">선택</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- 게시판 : e -->
+
+                                        <!-- 게시판 페이징 : s -->
+                                        <div class="board_pager">
+                                            <span class="inner">
+                                                <a href="#" class="pageFirst">
+                                                    <i class="xi-angle-left-min"></i>
+                                                    <span class="blind">첫 페이지</span>
+                                                </a>
+                                                <a href="#" class="pagePrev">
+                                                    <i class="xi-angle-left-min"></i>
+                                                    <span class="blind">이전 페이지</span>
+                                                </a>
+                                                <a href="#" class="pageNow" title="1page">
+                                                    <strong>1</strong>
+                                                    <span class="blind">현재 페이지</span>
+                                                </a>
+                                                <a href="#" class="pageNone">2</a>
+                                                <a href="#" class="pageNone">3</a>
+                                                <a href="#" class="pageNone">4</a>
+                                                <a href="#" class="pageNone">5</a>
+                                                <a href="" class="pageNext">
+                                                    <i class="xi-angle-right-min"></i>
+                                                    <span class="blind">다음 페이지</span>
+                                                </a>
+                                                <a href="" class="pageLast">
+                                                    <i class="xi-angle-right-min"></i>
+                                                    <span class="blind">마지막 페이지</span>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <!-- 게시판 페이징 : e -->
+
+                                    </div>
+                                </div>
+                                <!-- 모달(science 논문 검색) : e -->
+
+                                <div class="input_wrap">
+                                    <div class="item">
+                                        <dl>
+                                            <dt>제목</dt>
+                                            <dd>
+                                                <input type="text" id="actTitleKor2" name="actTitleKor2" maxlength="256" title="한글제목" placeholder="한글" onkeyup="engKorChkWord(this, 256);" class="byteChk">
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/256byte</span>
+                                                </div>
+                                                <input type="text" id="actTitleEng2" name="actTitleEng2" maxlength="256" title="영문제목" placeholder="영문" onkeyup="engKorChkWord(this, 256);" class="byteChk mt">
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/256byte</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="writerName">저자</label></dt>
+                                            <dd>
+                                                <div class="input_add type2">
+                                                    <input type="text" name="writerName" id="writerName" title="저자명 입력">
+                                                    <button type="button" class="addBtn"><span class="blind">추가</span></button>
+                                                </div>
+                                                <div class="input_add type2">
+                                                    <input type="text" name="writerName2" id="writerName2" title="저자명 입력">
+                                                    <button type="button" class="addBtn minus"><span class="blind">제거</span></button>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="abstract">초록</label></dt>
+                                            <dd>
+                                                <textarea id="abstract" name="abstract" rows="5" maxlength="512" title="초록 입력" onkeyup="engKorChkWord(this, 512);" class="byteChk"></textarea>
+                                                <div class="text_byteBox">
+                                                    <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="Kywd2">키워드(한글)<em class="point">*<span class="blind">필수</span></em></label></dt>
+                                            <dd>
+                                                <ul class="keyword">
+                                                    <li>키워드1 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드2 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드3 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드4 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                </ul>
+                                                <input type="text" name="Kywd2" id="Kywd2">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="engKywd2">키워드(영문)<em class="point">*<span class="blind">필수</span></em></label></dt>
+                                            <dd>
+                                                <ul class="keyword">
+                                                    <li>키워드1 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드2 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드3 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                    <li>키워드4 <a href="#" class="btn_del"><span class="blind">삭제</span></a></li>
+                                                </ul>
+                                                <input type="text" name="engKywd2" id="engKywd2">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="journal">저널명</label></dt>
+                                            <dd>
+                                                <input type="text" id="journal" name="journal" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="publisher">출판사</label></dt>
+                                            <dd>
+                                                <input type="text" id="publisher" name="publish" maxlength="100">
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt>저널 정보</dt>
+                                            <dd>
+                                                <ul class="sub_inputBox">
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="jourIssn">저널 ISSN</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="jourIssn" id="jourIssn">
+                                                            </div>
+                                                        </div>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="jourIsbn">저널 ISBN</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="jourIsbn" id="jourIsbn">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="jourVol">저널 권</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="jourVol" id="jourVol">
+                                                            </div>
+                                                        </div>
+                                                        <div class="per50">
+                                                            <div class="subInput_tit">
+                                                                <label for="jourNum">저널 호</label>
+                                                            </div>
+                                                            <div class="subInput_box">
+                                                                <input type="text" name="jourNum" id="jourNum">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="item">
+                                        <dl>
+                                            <dt><label for="originalURL">원문 URL</label></dt>
+                                            <dd>
+                                                <input type="text" name="originalURL" id="originalURL">
+                                                <div class="info_box type2">
+                                                    <i class="xi-error"></i>
+                                                    <span>URL을 통해 입력시 " http:// "를 포함한 전체 URL을 등록해주세요.</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="title_align clear">
+                                    <div class="titA_left">
+                                        <h4 class="title"><span class="blue">Step 03</span> 과제등록</h4>
+                                    </div>
+                                    <div class="titA_right">
+                                        <a href="#" class="btn_line blue">추가등록</a>
+                                    </div>
+                                </div>
+                                <div class="gray_box tal">
+                                    <p class="warning_txt">등록한 관련 과제/논문 정보는 관리자의 승인을 통해 서비스됩니다. 한건만 등록하신다면 “승인요청”버튼을,  한번에 더 많은 과제/논문을 등록하고 싶다면 “추가등록”버튼을 클릭해주세요.</p>
+                                    <p class="warning_txt">추가등록시 입력하신 정보는 하단부 리스트에 추가됩니다. 여러정보를 한번에 신청하실경우 리스트 아래 “일괄 승인요청”버튼을 클릭해주세요.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <h4 class="title">등록중인 LINK 정보</h4>
+                <div class="table_wrap">
+                    <table class="tbl">
+                        <caption>등록중인 LINK 정보를 나타낸 표로, 번호, 구분, 분류, 제목, 등록방식, 원문보기, 삭제로 구분되어 있습니다.</caption>
+                        <colgroup>
+                            <col span="3" style="width:8%">
+                            <col>
+                            <col style="width:13%">
+                            <col style="width:13%">
+                            <col style="width:13%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th scope="col">구분</th>
+                            <th scope="col">분류</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">등록방식</th>
+                            <th scope="col">원문보기</th>
+                            <th scope="col">삭제</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>추천</td>
+                            <td>과제</td>
+                            <td class="tal">소상공인을 위한 블루투스 기술 기반의 BYOD (Bring your own device) Phone to Phone 핀테크 솔루션 개발</td>
+                            <td>직접입력</td>
+                            <td><a href="#" class="btn_tbl black">GO</a></td>
+                            <td><a href="#" class="btn_tbl">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>추천</td>
+                            <td>논문</td>
+                            <td class="tal">소상공인을 위한 블루투스 기술 기반의 BYOD (Bring your own device) Phone to Phone 핀테크 솔루션 개발</td>
+                            <td>ScienceON 연계</td>
+                            <td><a href="#" class="btn_tbl black">GO</a></td>
+                            <td><a href="#" class="btn_tbl">삭제</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>추천</td>
+                            <td>과제</td>
+                            <td class="tal">딥러닝 기반 3차원 기상 레이더 데이터 분석기법 연구</td>
+                            <td>NTIS연계</td>
+                            <td><a href="#" class="btn_tbl black">GO</a></td>
+                            <td><a href="#" class="btn_tbl">삭제</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <script>
+                    /*바이트수 체크와 달력부분 스크립트는 기존에 있던부분 사용*/
+
+                    //Byte check
+                    $(document).on('keyup', '.byteChk', function(e){
+                        var data = $(this).val();
+                        $(this).next().find('.textbyte').text(getBytes(data));
+                    });
+                    function getBytes(str){
+                        var cnt = 0;
+                        for(var i =0; i<str.length;i++) {
+                            cnt += (str.charCodeAt(i) >512) ? 2 : 1;
+                        }
+                        return cnt;
+                    }
+                </script>
+
+
+                <div class="systemBtn_wrap">
+                    <div class="sysBtn_left">
+                        <a href="#" class="btn_def black">저장하고 이전으로</a>
+                    </div>
+                    <a href="#" class="btn_def blue">저장하고 다음으로</a>
+                </div>
+
+                <!-- 컨텐츠 입력 : e -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

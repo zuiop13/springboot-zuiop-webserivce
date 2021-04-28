@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no,email=no,address=no">
+        <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+        <meta name="robots" content="noindex">
+        <meta name="title" content="국가 연구데이터 플랫폼">
+        <meta name="keywords" content="국가 연구데이터 플랫폼">
+        <meta name="description" content="사이트 설명">
+        <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+        <title>국가 연구데이터 플랫폼 : DataON</title>
+
+        <!-- 공통 CSS -->
+        <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+        <!-- 서브 CSS -->
+        <link rel="stylesheet" href="../css/sub.css">
+        <link rel="stylesheet" href="../css/content.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- 공통 JS -->
+        <!--[if lt IE 9]>
+        <script src="../js/dist/jquery/html5.js"></script>
+        <![endif]-->
+        <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+        <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+        <script src="../js/menu.js"></script>
+        <script src="../js/cmmn.js"></script>
+        <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+        <!-- 서브 JS -->
+        <script src="../js/sub.js"></script>
+        <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+    </head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">소개</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="loc_row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>DataOn</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>소개</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="container">
+            <div id="content">
+                <!-- 일반컨텐츠 여기에 넣어주세요 : S -->
+                <div class="data_tab intro_tab">
+                    <ul class="data_tabMenu intro_tabMenu clear">
+                        <!-- tab1 s -->
+                        <li>
+                            <a href="#"   class="on" title="활성 메뉴">개요</a>
+                            <div class="data_tabSub intro_tabSub">
+                                <div class="intro_title_wrap">
+                                    <h3 class="title">개요</h3>
+                                    <img src="../images/contents/1-1bg.png" alt="bg">
+                                    <div class="title_textarea">Korea Research Data<br>Platform Service</div>
+                                </div>
+                                <div class="intro_title_wrap intro_title_wrap2">
+                                    <h3 class="title">
+                                        국가연구데이터플랫폼서비스
+                                        <br><span>[Korea Research Data Platform Service]는</span>
+                                    </h3>
+                                    <p class="review">국내외 연구데이터 정보를 한곳에서 서비스하는 국가연구데이터 포털입니다. 연구데이터를 검색·공유·관리 하는 것 뿐만 아니라 커뮤니티 연구자들끼리 데이터를 
+                                        공유하고 공동 활용해 국가 R&D 투자 효율성을 높이고 연구 생산성 향상에 기여하는 것이 주 목적입니다.</p>
+                                </div>
+                                <div class="synopsis">
+                                    <h3 class="title">dataON 개요</h3>
+                                    <p class="review">연구데이터*를 체계적으로 공유·관리하고 검색·분석·활용을 지원하는 플랫폼입니다.</p>
+                                    <div class="process_wrap">
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con1-1.svg" alt="">
+                                            </div>
+                                            <span>체계적인 연구데이터 유통관리</span>
+                                        </div>
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con1-2.svg" alt="">
+                                            </div>
+                                            <span>효과적인 검색활용 환경 제공</span>
+                                        </div>
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con1-3.svg" alt="">
+                                            </div>
+                                            <span>클라우드 기반의 데이터 분석 지원</span>
+                                        </div>
+                                    </div>
+                                    <div class="process_help">
+                                        <p class="help"><span class="point">*</span> 연구데이터 (공동관리규정 제25조 28항)란?</p>
+                                        <span class="help_ass">연구데이터*를 체계적으로 공유·관리하고 검색·분석·활용을 지원하는 플랫폼입니다.</span>
+                                    </div>
+                                </div>
+                                <div class="synopsis synopsis2">
+                                    <h3 class="title">dataON 필요성</h3>
+                                    <p class="review">국가적 차원의 연구데이터 활용과 공유·연계를 위한 플랫폼 구축 및 서비스 운영이 필요합니다.</p>
+                                    <div class="process_wrap">
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con2-1.svg" alt="">
+                                            </div>
+                                            <span>연구데이터 중요성 증대 및 국가 경쟁력의 원천으로 대두</span>
+                                        </div>
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con2-2.svg" alt="">
+                                            </div>
+                                            <span>연구데이터 공유 융합을 통한 가치 창출 필요성 증대</span>
+                                        </div>
+                                        <div class="process">
+                                            <div class="process_icon_Wrap">
+                                                <img src="../images/contents/1-1con2-3.svg" alt="">
+                                            </div>
+                                            <span>연구데이터 공유 활용을 위한 국가적인 환경 구축 필요</span>
+                                        </div>
+                                    </div>
+                                    <div class="process_focus">
+                                        <div class="focus_text">
+                                            <p>공급자 중심에서 수요자 중심의 연구데이터 공유·활성 체계 구축으로<br>
+                                                과학기술 연구개발자들의 다양한 국가연구개발사업을 통해 양질의 데이터 축적과 부가가치를 창출!</p>
+                                        </div>
+                                    </div>
+                                    <div class="synopsis synopsis3">
+                                        <h3 class="title">국가연구개발사업에 대하여 알아보기</h3>
+                                        <div class="sys3_area">
+                                            <h4>국가연구개발사업의 관리 등에 관한 규정</h4><span>2019.09.01 시행</span>
+                                            <ul>
+                                                <li>
+                                                    <ul class="sys3_area_text">
+                                                        <strong>제2조 정의</strong>
+                                                        <li><span>01</span><p>“국가연구개발사업”이란 중앙행정기관이 법령에 근거하여 연구개발과제를 특정하여 그 연구개발비의 전부 또는 일부를 출연하거나 공공기금 등으로 지원하는 과학기술 분야의 연구개발사업을 말한다.</p></li>
+                                                        <li><span>18</span><p>“연구데이터”란 연구개발과제 수행 과정에서 실시하는 각종 실험, 관찰, 조사 및 분석 등을 통하여 산출된 사실 자료로서 연구결과의 검증에 필수적인 데이터를 말한다.</p></li>
+                                                        <li><span>19</span><p>“데이터관리계획”이란 연구데이터의 생산·보존·관리 및 공동활용 등에 관한 계획을 말한다</p></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="sys3_area_text">
+                                                        <strong>제7조 (연구개발과제의 선정)</strong>
+                                                        <li><span>10</span><p>데이터관리계획에 따른 연구데이터 생산·보존·관리의 충실성 및 공동활용 가능성(중앙행정기관의 장이 필요하다고 인정하는 연구개발과제의 경우에만 해당한다.)</p></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="sys3_area_text">
+                                                        <strong>제25조(연구개발정보의 관리)</strong>
+                                                        <li><span>25</span><p>중앙행정기관의 장은 연구데이터의 생산·보존·관리 및 공동활용 등에 관한 시책을 수집·추진할 수 있다.</p></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <i class="xi-ellipsis-v"></i>
+                                        </div>
+                                        <p class="all_check">해당 규정의 전체 내용을 확인하기 위해서는 <strong>이곳</strong> 을 클릭하세요.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- tab1 f -->
+                        <!-- tab2 s -->
+                        <li>
+                            <a href="#" title="비활성 메뉴" class="">개념도</a>
+                            <div class="data_tabSub intro_tabSub">
+                                <div class="intro_title_wrap mobile">
+                                    <h3 class="title">개념도</h3>
+                                    <div class="diagram_wrap">
+                                        <img src="../images/contents/1-1diagram1-1.png" alt="개념도">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- tab2 f -->
+                        <!-- tab3 s -->
+                        <li>
+                            <a href="#" title="비활성 메뉴" class="">기대효과</a>
+                            <div class="data_tabSub intro_tabSub">
+                                <div class="intro_title_wrap mobile">
+                                    <h3 class="title">기대효과</h3>
+                                    <div class="diagram_wrap">
+                                        <img src="../images/contents/1-1diagram1-3.gif" alt="기대효과">
+                                    </div>
+                                    
+                                    <div class="process_help info_box">
+                                        <i class="xi-error"></i><span class="help_ass">연구데이터 공유활용 시, 영국 4억 파운드, 네덜란드 1.3억 유로, 덴마크 8천만유로의 비용절감이 가능할 것으로 추정 (HOUGHTON ET AL., 2014)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- tab3 f -->
+                    </ul>
+                </div>
+                <!-- 일반컨텐츠 여기에 넣어주세요 : E -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

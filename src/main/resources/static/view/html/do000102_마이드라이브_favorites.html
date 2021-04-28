@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+    <meta name="robots" content="noindex">
+    <meta name="title" content="국가 연구데이터 플랫폼">
+    <meta name="keywords" content="국가 연구데이터 플랫폼">
+    <meta name="description" content="사이트 설명">
+    <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+    <title>Favorites | 마이드라이브 | 국가 연구데이터 플랫폼 : DataON</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 공통 JS -->
+    <!--[if lt IE 9]>
+    <script src="../js/dist/jquery/html5.js"></script>
+    <![endif]-->
+    <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/cmmn.js"></script>
+    <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+    <!-- 서브 JS -->
+    <script src="../js/sub.js"></script>
+    <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+
+    <!-- fancytree -->
+    <link rel="stylesheet" href="https://dataon.kisti.re.kr/resources/css/dist/tree/ui.fancytree.css" />
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.ui-deps.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.persist.js"></script>
+
+    <!-- context menu -->
+    <link rel="stylesheet" href="https://dataon.kisti.re.kr/resources/css/dist/tree/jquery.contextMenu.css" />
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/jquery/jquery.contextMenu.js"></script>
+    <script type="text/javascript" src="https://dataon.kisti.re.kr/resources/js/dist/tree/jquery.fancytree.contextMenu.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var FT = $.ui.fancytree;
+
+            $("#tree1, #tree2").fancytree({
+                checkbox: false,
+                selectMode: 1,
+                activate: function(event, data){
+                    var node = data.node;
+                    FT.debug("activate: event=", event, ", data=", data);
+                    if(!$.isEmptyObject(node.data)){
+                        alert("custom node data: " + JSON.stringify(node.data));
+                    }
+                },
+                lazyLoad: function(event, data){
+                    data.result = {url: "ajax-sub2.json"};
+                }
+            });
+
+            $("#tree3, #tree4").fancytree({
+                checkbox: true,
+                selectMode:3,
+                activate: function(event, data){
+                    var node = data.node;
+                    FT.debug("activate: event=", event, ", data=", data);
+                    if(!$.isEmptyObject(node.data)){
+                        alert("custom node data: " + JSON.stringify(node.data));
+                    }
+                },
+                lazyLoad: function(event, data){
+                    data.result = {url: "ajax-sub2.json"};
+                }
+            });
+
+            var linkOption = {
+                "meta": {name: "메타정보열람", icon: function(opt, $itemElement, itemKey, item){
+                    $itemElement.html('<i class="xi-folder-open"></i> ' + item.name);
+                }},
+                "go" : {name: "본문가기", icon:function(opt, $itemElement, itemKey, item){
+                    $itemElement.html('<i class="xi-log-in"></i> ' + item.name);
+                }},
+                "userShare": {name: "사용자 공유", icon: function(opt, $itemElement, itemKey, item){
+                    $itemElement.html('<i class="xi-share-alt-o"></i> ' + item.name);
+                }},
+                "comShare": {name: "커뮤니티 공유", icon: function(opt, $itemElement, itemKey, item){
+                    $itemElement.html('<i class="xi-slideshare"></i> ' + item.name);
+                }},
+                "delete": {name: "삭제", icon: function(opt, $itemElement, itemKey, item){
+                    $itemElement.html('<i class="xi-trash-o"></i> ' + item.name);
+                }}
+            };
+
+            //link 컨텍스트 메뉴
+            $.contextMenu({
+                trigger: 'right',
+                selector: ".context_link",
+                items: linkOption,
+                callback: function(cmd, options) {
+                    switch (cmd) {
+                        case 'meta':
+                            $('#myDl_1').modal('show');
+                            break;
+                        case 'go':
+                            alert("본문가기 링크");
+                            break;
+                        case 'userShare':
+                            $('#myDl_2').modal('show');
+                            break;
+                        case 'comShare':
+                            $('#myDl_3').modal('show');
+                            break;
+                        case 'delete':
+                            var delCon = confirm("선택하신 파일을 삭제하시겠습니까?");
+                            if(delCon){
+                                alert("삭제되었습니다.");
+                            }else{
+                                alert("삭제가 취소되었습니다.");
+                            }
+                            break;
+                    }
+                }
+            });
+
+            //...좌클릭
+            $.contextMenu({
+                trigger: 'left',
+                selector: ".myD_etc.linkM",
+                items: linkOption,
+                callback: function(cmd, options) {
+                    switch (cmd) {
+                        case 'meta':
+                            $('#myDl_1').modal('show');
+                            break;
+                        case 'go':
+                            alert("본문가기 링크");
+                            break;
+                        case 'userShare':
+                            $('#myDl_2').modal('show');
+                            break;
+                        case 'comShare':
+                            $('#myDl_3').modal('show');
+                            break;
+                        case 'delete':
+                            var delCon = confirm("선택하신 파일을 삭제하시겠습니까?");
+                            if(delCon){
+                                alert("삭제되었습니다.");
+                            }else{
+                                alert("삭제가 취소되었습니다.");
+                            }
+                            break;
+                    }
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo" class="myD_logo">
+                <a href="#" class="logo_myD_do">
+                    <img src="../images/layout/logo_myDrive_dataon.png" alt="데이터온">
+                </a>
+                <a href="#" class="logo_myD_my">
+                    <img src="../images/layout/logo_myDrive_myd.png" alt="마이드라이브" >
+                </a>
+            </h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div id="n_myDrive" class="n_myDrive">
+            <!-- 모바일용 메뉴 펼침 버튼 -->
+            <!--<a href="#" class="mo_myDmenu">My Drive 메뉴<span class="blind">열기</span></a>-->
+            <div class="n_myDrive_left">
+                <div class="myD_upload">
+                    <a href="#fileUpload" class="file_upBtn" rel="modal:open">파일 업로드</a>
+                </div>
+                <div class="n_myDrive_menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="fav on">Favorites</a>
+                            <div class="subM">
+                                <ul>
+                                    <li><a href="#">내등록연구데이터</a></li>
+                                    <li><a href="#">관심연구데이터</a></li>
+                                    <li><a href="#">공유연구데이터</a></li>
+                                    <li>
+                                        <a href="#">커뮤니티</a>
+                                        <ul>
+                                            <li><a href="#">이겨내자 코로나!!(COVID...</a></li>
+                                            <li><a href="#">위성데이터 분석 커뮤니티</a></li>
+                                            <li><a href="#">CCTV 영상 분석</a></li>
+                                            <li><a href="#">재난위험예측</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="file">Files</a>
+                            <div class="subM">
+                                <div class="file_tree">
+                                    <div id="tree1" class="sampletree">
+                                        <ul id="treeData">
+                                            <li id="id1" class="folder">MyCanvas
+                                                <div class="treeBtn_Box">
+                                                    <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                    <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                </div>
+                                                <ul>
+                                                    <li id="id1_1" class="folder">workflow
+                                                        <ul>
+                                                            <li id="id1_1_1" class="folder">Clone_Data_Canvas
+                                                                <ul>
+                                                                    <li id="id1_1_1_1">ImageTransfer_1</li>
+                                                                    <li id="id1_1_1_2">Sub-item 1.1.2</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li id="id1_1_2">Sub-item 1.1.2</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="id1_2" class="folder">Sub-item 3.2
+                                                        <ul>
+                                                            <li id="id1_2_1">Sub-item 1.2.1</li>
+                                                            <li id="id1_2_2">Sub-item 1.2.2</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="id2" class="folder">MyCommunities
+                                                <ul>
+                                                    <li id="id2_1" class="folder">Sub-item 2.1
+                                                        <ul>
+                                                            <li id="id2_1_1">Sub-item 2.1.1</li>
+                                                            <li id="id2_1_2">Sub-item 2.1.2</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="id2_2" class="folder">Sub-item 4.2
+                                                        <ul>
+                                                            <li id="id2_2_1">Sub-item 2.2.1</li>
+                                                            <li id="id2_2_2">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_3">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_4">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_5">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_6">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_7">Sub-item 2.2.2</li>
+                                                            <li id="id2_2_8">Sub-item 2.2.2</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="sc">Super Computer</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="myD_volume">
+                    <ul>
+                        <li class="use"><strong>11GB</strong>/1,000GB</li>
+                        <li class="rest">잔여 : 989GB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="n_myDrive_content">
+                <div class="myD_content">
+                    <!-- 마이드라이브 상단 버튼 및 정보 : s -->
+                    <div class="myD_topinfo">
+                        <div class="myD_tiLeft">
+                            <a href="#" class="myD_btn">삭제</a>
+                        </div>
+                        <div class="myD_tiRight">
+                            <ul class="myD_info">
+                                <li>전체 <span>4건</span></li>
+                                <li>현재페이지 <span>1/100</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="myD_list">
+                        <table>
+                            <caption>마이드라이브의 Favorites 목록으로 게시물 선택, 즐겨찾기, title, size, date, 기타 옵션 항목으로 구분되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:3rem">
+                                <col style="width:2rem">
+                                <col>
+                                <col style="width:8rem">
+                                <col style="width:8rem">
+                                <col style="width:6rem">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" name="allChk" id="allChk" title="전체선택">
+                                </th>
+                                <th scope="col"><span class="blind">즐겨찾기</span></th>
+                                <th scope="col">Title</th>
+                                <th scope="col" class="text-center">size</th>
+                                <th scope="col" class="text-center">Date</th>
+                                <th scope="col"><span class="blind">기타 옵션</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="context_link"><input type="checkbox" name="myDsel_1" id="myDsel_1" class="aChk" title="선택"></td>
+                                <td class="context_link">
+                                    <a href="#" class="bookMark on"><span class="blind">즐겨찾기</span></a>
+                                </td>
+                                <td class="context_link">
+                                    <a href="#myDl_1" rel="modal:open">
+                                        <strong class="title">즐겨찾기 대상이 되는 연구데이터 타이틀 즐겨찾기 대상이 되는 연구데이터 타이틀</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_link"><span class="myD_vol">0Byte</span></td>
+                                <td class="text-center context_link">
+                                    2020.08.30
+                                    <a href="#" class="myD_f"><span class="blind">자세히 보기</span></a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc linkM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr class="myD_item">
+                                <td colspan="2"></td>
+                                <td colspan="4">
+                                    <div class="myD_fileList">
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_doc.png" alt="doc" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>DOC</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_file.png" alt="file" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>FILE</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_hwp.png" alt="hwp" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>HWP</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_img.png" alt="img" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>IMG</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_pdf.png" alt="pdf" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>PDF</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_ppt.png" alt="ppt" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>PPT</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_xls.png" alt="xls" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>XLS</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_zip.png" alt="zip" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>ZIP</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_txt.png" alt="txt" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>TXT</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="context_link"><input type="checkbox" name="myDsel_2" id="myDsel_2" class="aChk" title="선택"></td>
+                                <td class="context_link">
+                                    <a href="#" class="bookMark"><span class="blind">즐겨찾기</span></a>
+                                </td>
+                                <td class="context_link">
+                                    <a href="#myDl_1" rel="modal:open">
+                                        <strong class="title">푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_link"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_link">
+                                    2020.08.30
+                                    <a href="#" class="myD_f"><span class="blind">자세히 보기</span></a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="myD_etc linkM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr class="myD_item">
+                                <td colspan="2"></td>
+                                <td colspan="4">
+                                    <div class="myD_fileList">
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_doc.png" alt="doc" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>DOC</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="context_link"><input type="checkbox" name="myDsel_3" id="myDsel_3" class="aChk" title="선택"></td>
+                                <td class="context_link">
+                                    <a href="#" class="bookMark"><span class="blind">즐겨찾기</span></a>
+                                </td>
+                                <td class="context_link">
+                                    <a href="#myDl_1" rel="modal:open">
+                                        <strong class="title">푸리에 변환 적외선 분광(Fourier Transform Infrared Radiation, FT-IR) 분석</strong>
+                                    </a>
+                                </td>
+                                <td class="text-center context_link"><span class="myD_vol">999GB</span></td>
+                                <td class="text-center context_link">
+                                    2020.08.30
+                                    <a href="#" class="myD_f"><span class="blind">자세히 보기</span></a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#myDl_5" class="myD_etc linkM"><i></i><span class="blind">메뉴 더보기</span></a>
+                                </td>
+                            </tr>
+                            <tr class="myD_item">
+                                <td colspan="2"></td>
+                                <td colspan="4">
+                                    <div class="myD_fileList">
+                                        <div class="myD_fl_item">
+                                            <div class="myD_fl_title">
+                                                <ul>
+                                                    <li><a href="#"><img src="../images/sub/icon_zip.png" alt="zip" class="icon"> 유도결합 플라즈마 질량(ICP-MS) 분석 분류는 과학계의 관습이며, 분자의 성질</a></li>
+                                                    <li>ZIP</li>
+                                                    <li>20MB</li>
+                                                </ul>
+                                            </div>
+                                            <div class="myD_fl_option">
+                                                <a href="#myDl_4" class="myD_btn" rel="modal:open">복사</a>
+                                                <a href="#myDl_6" class="myD_btn" rel="modal:open">고속다운로드</a>
+                                                <a href="#" class="myD_btn">다운로드</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 파일 업로드 레이어팝업 : s -->
+                    <div id="fileUpload" class="layer_def type2">
+                        <div class="layer_content">
+                            <h2 class="title">파일 업로드</h2>
+                            <div class="myD_fileUp_wrap">
+                                <div class="myDfu_box">
+                                    <div class="myDfu_up">
+                                        <!-- 파일 업로드 영역 -->
+                                    </div>
+                                    <div class="myDfu_tree">
+                                        <div class="myDfu_scroll">
+                                            <div class="file_tree">
+                                                <div id="tree4" class="sampletree">
+                                                    <ul id="treeData4" class="ui-fancytree-source fancytree-helper-hidden">
+                                                        <li id="id8" class="folder">MyCanvas
+                                                            <div class="treeBtn_Box">
+                                                                <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                                <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                            </div>
+                                                            <ul>
+                                                                <li id="id8_1" class="folder">workflow
+                                                                    <ul>
+                                                                        <li id="id8_1_1" class="folder">Clone_Data_Canvas
+                                                                            <ul>
+                                                                                <li id="id8_1_1_1">ImageTransfer_1</li>
+                                                                                <li id="id8_1_1_2">Sub-item 1.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id8_1_2">Sub-item 1.1.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id8_2" class="folder">Sub-item 3.2
+                                                                    <ul>
+                                                                        <li id="id8_2_1">Sub-item 1.2.1</li>
+                                                                        <li id="id8_2_2">Sub-item 1.2.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li id="id9" class="folder">MyCommunities
+                                                            <ul>
+                                                                <li id="id9_1" class="folder">Sub-item 2.1
+                                                                    <ul>
+                                                                        <li id="id9_1_1">Sub-item 2.1.1</li>
+                                                                        <li id="id9_1_2">Sub-item 2.1.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id9_2" class="folder">Sub-item 4.2
+                                                                    <ul>
+                                                                        <li id="id9_2_1">Sub-item 2.2.1</li>
+                                                                        <li id="id9_2_2">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_3">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_4">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_5">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_6">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_7">Sub-item 2.2.2</li>
+                                                                        <li id="id9_2_8">Sub-item 2.2.2</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="myDfu_btn">
+                                            <a href="#" class="btn_bigDef blue">선택폴더에 저장</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일 업로드 레이어팝업 : e -->
+
+                    <!-- 메타데이터 내용보기 레이어팝업 : s -->
+                    <div id="myDl_1" class="layer_def">
+                        <div class="layer_content">
+                            <em class="metaD_top">메타데이터 내용보기</em>
+                            <div class="metaData">
+                                <div class="metaD_title">
+                                    <span>Anamal Disease DB</span>
+                                    <strong>동물질병 DB</strong>
+                                </div>
+                                <div class="metaD_con">
+                                    국내의 주요 가축인 개, 고양이, 돼지, 소 및 닭에서 발병되는 질병들에 대한 정보를 데이터베이스화하여 질병진단 시스템으로 구축하였다.
+                                    우선 1689개의 개와 고양이 질병을 대상으로 하였다. 이들중 256개 주요 질병은 질병의 정의, 원인, 발병기전, 발병 및 역학, 주요증상, 진단,
+                                    감별진단, 병리소견(임상병리소견, 병리해부소견, 병리조직소견), 치료, 예방, 예후, 보호자에 대한 조언, 참고자료 등의 항목으로 구성하였다.
+                                    나머지 질병들은 질병의 개요와 증상들은 전부 나열하였다. <br><br>
+                                    질병 정보의 검색은 축종과 질병명의 키워드를 통한 검색 방법과 주요증상을 선택하는 다중검색 방법이 있다. 정확한 검색을 위해 주요 증상은
+                                    다양하게 분류하였는데 전신 종합 증상, 통증 그리고 근골격계, 비뇨기계, 생식기계, 소화기계, 신경계, 심혈관계, 안과, 청각기관, 피부, 호흡기계
+                                    기관으로 분류하고 여기에 거의 500가지 증상을 설정, 분류해서 표준화하였다. 이들 주요 증상 키워드를 이용한 검색 방법을 통해 유사 질병의 종류들을
+                                    검색할 수 있을 뿐 아니라 질병에 대한 증상을 하나씩 추가하여 증상에 따른 질병의 진단에 쉽게 접근할 수 있는 시스템이다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 메타데이터 내용보기 레이어팝업 : e -->
+
+                    <!-- 링크공유 레이어팝업 : s -->
+                    <div id="myDl_2" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title"><spring:message code="text.mydrv.42" /></h2>
+                            <strong class="sm_title"><spring:message code="text.mydrv.42" /></strong>
+                            <div class="myD_mail">
+                                <input type="text" name="email" id="email" placeholder="사용자메일을 검색해 주세요.">
+                                <button type="button" class="brd_schBtn">사용자 메일 검색</button>
+                            </div>
+
+                            <table class="tbl">
+                                <caption>검색한 메일을 나타낸 표로, 번호, 성명, 메일주소, 비고로 구분되어 있습니다.</caption>
+                                <colgroup>
+                                    <col style="width:5rem">
+                                    <col style="width:8rem">
+                                    <col>
+                                    <col style="width:8rem">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">성명</th>
+                                    <th scope="col">메일주소</th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td>홍길동</td>
+                                    <td>abcd1234@naver.com</td>
+                                    <td><a href="#" class="btn_tbl">선택하기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>홍길동</td>
+                                    <td>abcd1234@naver.com</td>
+                                    <td><a href="#" class="btn_tbl">선택하기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>홍길동</td>
+                                    <td>abcd1234@naver.com</td>
+                                    <td><a href="#" class="btn_tbl">선택하기</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>홍길동</td>
+                                    <td>abcd1234@naver.com</td>
+                                    <td><a href="#" class="btn_tbl">선택하기</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <strong class="sm_title">선택목록</strong>
+                            <ul class="mydSel_list">
+                                <li>
+                                    <div class="mdS_box">
+                                        <span class="num">1</span>
+                                        <span>홍길동</span>
+                                        <span>abcd1234@naver.com</span>
+                                        <button type="button" class="btn_upfileDel"><span class="blind">삭제</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mdS_box">
+                                        <span class="num">2</span>
+                                        <span>홍길동</span>
+                                        <span>abcd1234@naver.com</span>
+                                        <button type="button" class="btn_upfileDel"><span class="blind">삭제</span></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">공유하기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 링크공유 레이어팝업 : e -->
+
+                    <!-- 커뮤니티공유 레이어팝업 : s -->
+                    <div id="myDl_3" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">커뮤니티 공유</h2>
+                            <strong class="sm_title"><label for="memCom">가입된 커뮤니티 목록</label></strong>
+                            <select name="memCom" id="memCom" class="w100p">
+                                <option value="">커뮤니티를 선택해주세요</option>
+                                <option value="1">커뮤니티1</option>
+                                <option value="2">커뮤니티2</option>
+                                <option value="3">커뮤니티3</option>
+                                <option value="4">커뮤니티4</option>
+                                <option value="5">커뮤니티5</option>
+                            </select>
+
+                            <strong class="sm_title">선택목록</strong>
+                            <ul class="mydSel_list">
+                                <li>
+                                    <div class="mdS_box">
+                                        <em>현재 저장된 타이틀이 보여집니다.</em>
+                                        <button type="button" class="btn_upfileDel"><span class="blind">삭제</span></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">공유하기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 커뮤니티공유 레이어팝업 : e -->
+
+                    <!-- 파일복사 레이어팝업 : s -->
+                    <div id="myDl_4" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">파일복사</h2>
+
+                            <div class="myDfile_wrap">
+                                <div class="n_myDrive">
+                                    <div class="n_myDrive_menu2">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="file on">Files</a>
+                                                <div class="subM">
+                                                    <div class="file_tree">
+                                                        <div id="tree3" class="sampletree">
+                                                            <ul id="treeData2" class="ui-fancytree-source fancytree-helper-hidden">
+                                                                <li id="id3" class="folder">MyCanvas
+                                                                    <div class="treeBtn_Box">
+                                                                        <a href="#myDl_5" class="treeBtn" rel="modal:open">+<span class="blind">추가</span></a>
+                                                                        <a href="#" class="treeBtn">-<span class="blind">제거</span></a>
+                                                                    </div>
+                                                                    <ul>
+                                                                        <li id="id3_1" class="folder">workflow
+                                                                            <ul>
+                                                                                <li id="id3_1_1" class="folder">Clone_Data_Canvas
+                                                                                    <ul>
+                                                                                        <li id="id3_1_1_1">ImageTransfer_1</li>
+                                                                                        <li id="id3_1_1_2">Sub-item 1.1.2</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                                <li id="id3_1_2">Sub-item 1.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id3_2" class="folder">Sub-item 3.2
+                                                                            <ul>
+                                                                                <li id="id3_2_1">Sub-item 1.2.1</li>
+                                                                                <li id="id3_2_2">Sub-item 1.2.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="id4" class="folder">MyCommunities
+                                                                    <ul>
+                                                                        <li id="id4_1" class="folder">Sub-item 2.1
+                                                                            <ul>
+                                                                                <li id="id4_1_1">Sub-item 2.1.1</li>
+                                                                                <li id="id4_1_2">Sub-item 2.1.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li id="id4_2" class="folder">Sub-item 4.2
+                                                                            <ul>
+                                                                                <li id="id4_2_1">Sub-item 2.2.1</li>
+                                                                                <li id="id4_2_2">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_3">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_4">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_5">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_6">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_7">Sub-item 2.2.2</li>
+                                                                                <li id="id4_2_8">Sub-item 2.2.2</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="sc">Super Computer</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">선택폴더에 복사</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 파일복사 레이어팝업 : e -->
+
+                    <!-- 하위폴더생성 레이어팝업 : s -->
+                    <div id="myDl_5" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">하위 폴더 생성</h2>
+                            <table class="tbl">
+                                <caption>하위 폴더를 생성하는 표로, 경로, 폴더명으로 구분되어 있습니다.</caption>
+                                <colgroup>
+                                    <col style="width:10rem">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">경로</th>
+                                    <td class="text-left">MyFiles/GBTest</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="folder_name">폴더명</label></th>
+                                    <td class="text-left"><input type="text" name="folder_name" id="folder_name" class="w100p"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="centerBtn_wrap">
+                                <a href="#" class="btn_bigDef blue">생성</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 하위폴더생성 레이어팝업 : e -->
+
+                    <!-- 고속다운로드 레이어팝업 : s -->
+                    <div id="myDl_6" class="layer_def">
+                        <div class="layer_content">
+                            <h2 class="title">고속다운로드</h2>
+                            <div class="myD_defBox">
+                                고속다운로드 삽입 영역
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 고속다운로드 레이어팝업 : s -->
+
+                    <div class="board_pager">
+                        <span class="inner">
+                            <a href="#" class="pageFirst">
+                                <i class="xi-angle-left-min"></i>
+                                <span class="blind">첫 페이지</span>
+                            </a>
+                            <a href="#" class="pagePrev">
+                                <i class="xi-angle-left-min"></i>
+                                <span class="blind">이전 페이지</span>
+                            </a>
+                            <a href="#" class="pageNow" title="1page">
+                                <strong>1</strong>
+                                <span class="blind">현재 페이지</span>
+                            </a>
+                            <a href="#" class="pageNone">2</a>
+                            <a href="#" class="pageNone">3</a>
+                            <a href="#" class="pageNone">4</a>
+                            <a href="#" class="pageNone">5</a>
+                            <a href="" class="pageNext">
+                                <i class="xi-angle-right-min"></i>
+                                <span class="blind">다음 페이지</span>
+                            </a>
+                            <a href="" class="pageLast">
+                                <i class="xi-angle-right-min"></i>
+                                <span class="blind">마지막 페이지</span>
+                            </a>
+                        </span>
+                    </div>
+                    <!-- 마이드라이브 상단 버튼 및 정보 : e -->
+
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    //좌측 메뉴 영역 리사이즈
+                    $(".n_myDrive_left").resizable({
+                        minWidth:266,
+                        autoHide: true
+                    });
+
+                    //브라우저 리사이즈 할 경우 화면 높이 조정(푸터제외하고 헤더포함 전체화면 높이)
+                    myD_left();
+                    $(window).resize(function(){
+                        myD_left();
+                    });
+
+                    myDrive_menu(".n_myDrive_menu>ul"); //마이드라이브 메뉴
+                    myDrive_menu(".n_myDrive_menu2>ul"); //파일복사 메뉴
+//                    myDrive_moMenu();   //마이드라이브 메뉴 반응형(모바일)
+                    myD_slide();    //상세첨부파일 show/hide
+                    myD_allChk();   //체크박스 전체선택
+                });
+            </script>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

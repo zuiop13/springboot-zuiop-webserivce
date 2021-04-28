@@ -1,0 +1,289 @@
+/* 파일 미리보기 */
+.preview-panel {
+	display: table;
+	height: 31.375rem;
+	width: 100%;
+	border: 1px solid #E6E6E6
+}
+
+.preview-panel .preview-file-list, .preview-panel .preview-file-review {
+	position: relative;
+	display: table-cell;
+	vertical-align: top
+}
+
+.preview-panel .preview-file-list {
+	width: 38%;
+	border-right: 1px solid #e6e6e6;
+	max-width: 300px;
+}
+
+.preview-panel .preview-file-list .preview-file-header {
+	padding: 1rem 1.5rem;
+	height: 3.625rem;
+	font-size: 0.875rem;
+	border-bottom: 1px solid #E6E6E6
+}
+
+.preview-panel .preview-file-list .preview-file-header a {
+	font-weight: 500;
+	transition: all .3s
+}
+
+.preview-panel .preview-file-list .preview-file-header a:hover {
+	color: #0E4B98
+}
+
+.preview-panel .preview-file-list .preview-file-header .preview-file-link {
+	float: right
+}
+
+.preview-panel .preview-file-list .preview-file-header .preview-file-link a {
+	position: relative;
+	display: inline-block;
+	margin-left: 0.5625rem;
+	padding-left: 0.5625rem
+}
+
+.preview-panel .preview-file-list .preview-file-header .preview-file-link a:before {
+	content: "";
+	position: absolute;
+	height: 0.625rem;
+	left: 0;
+	top: 0.5rem;
+	border-left: 1px solid #C9C9C9
+}
+
+.preview-panel .preview-file-list .preview-file-header .preview-file-link a:first-child {
+	margin-left: 0;
+	padding-left: 0
+}
+
+.preview-panel .preview-file-list .preview-file-header .preview-file-link a:first-child:before {
+	display: none
+}
+
+.preview-panel .preview-file-list .file_list {
+	height: calc(100% - 3.625rem);
+	overflow: auto !important;
+}
+
+.preview-panel .preview-file-list .file-tree {
+	width: 100%;
+	height: 100%;
+	max-height: 27.625rem;
+	padding: 1rem;
+}
+
+.preview-panel .preview-file-review .preview-file-header {
+	height: 3.625rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.preview-panel .preview-file-review .preview-file-header.justify {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.preview-panel .preview-file-review .preview-file-header.justify>.item {
+	align-self: center;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.preview-panel .preview-file-review .preview-file-header.justify>.item.title {
+	height: 100%;
+	width: 58%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.preview-panel .preview-file-header .menu {
+	float: left
+}
+
+.preview-panel .preview-file-header .menu li {
+	float: left;
+	min-width: 6.25rem
+}
+
+.preview-panel .preview-file-header .menu li a {
+	display: block;
+	position: relative;
+	height: 3.625rem;
+	line-height: 3.625rem;
+	font-size: 1.125rem;
+	color: #393939;
+	font-weight: 500;
+	text-align: center;
+	transition: all .3s
+}
+
+.preview-panel .preview-file-header .menu li a.on:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0.3125rem;
+	background: #0E4B98
+}
+
+.preview-panel .preview-file-header .menu li a.on {
+	color: #0E4B98
+}
+
+.preview-panel .preview-file-header .menu-etc li {
+	float: left;
+	position: relative;
+	margin-left: 0.5625rem;
+	padding-left: 0.5625rem
+}
+
+.preview-panel .preview-file-header .menu-etc li:before {
+	content: "";
+	position: absolute;
+	height: 0.625rem;
+	left: 0;
+	top: 0.5rem;
+	border-left: 1px solid #C9C9C9
+}
+
+.preview-panel .preview-file-header .menu-etc li:first-child {
+	margin: 0;
+	padding: 0
+}
+
+.preview-panel .preview-file-header .menu-etc li:first-child:before {
+	display: none
+}
+
+.preview-panel .preview-file-header .menu-etc li a {
+	position: relative
+}
+
+.preview-panel .preview-file-review .preview-panel-content {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	margin: 3.625rem 0 4.625rem; /* height:23.25rem; */
+	overflow-y: auto;
+	background: #F8F8F8;
+	height: calc(100% - 3.625rem);
+}
+
+.preview-panel .preview-file-review .preview-panel-content .noReview {
+	display: table;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 9
+}
+
+.preview-panel .preview-file-review .preview-panel-content .noReview>div {
+	display: table-cell;
+	vertical-align: middle
+}
+
+.preview-panel .preview-file-review .preview-panel-footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 1.25rem 0;
+	border-top: 1px solid #E6E6E6;
+	text-align: center;
+	background: #fff
+}
+
+.preview-panel .preview-file-review .preview-panel-footer a {
+	min-width: inherit;
+	height: 2.0625rem;
+	line-height: 2.0625rem;
+	font-size: 0.875rem
+}
+
+.preview-panel-body {
+	overflow: hidden;
+	height: 100%;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.preview-panel-body pre {
+	display: block;
+	word-break: break-all;
+	white-space: pre-wrap;
+	border: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 1.5;
+	min-height: 100%;
+	font-size: 0.9rem;
+}
+
+.preview-panel-body .ace_content {
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 20px;
+}
+
+.preview-panel-footer {
+	margin-top: 1.25rem;
+	overflow: hidden;
+	padding: 0.9375rem 1rem 0.9375rem 1.875rem;
+	background: #F8F8F8;
+}
+
+.preview-img-zoom {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	/* width: 100%; */
+	text-align: right;
+	padding: 1rem;
+}
+
+@media screen and (max-width:640px) {
+	.preview-panel {
+		display: block;
+		height: auto
+	}
+	.preview-panel .preview-file-list, .preview-panel .preview-file-review {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: inherit;
+	}
+	.preview-panel .preview-file-list {
+		border-right: 0
+	}
+	.preview-panel .preview-file-list .preview-file-header {
+		padding: 0.8rem;
+	}
+	.preview-panel .preview-file-review {
+		border-top: 1px solid #e6e6e6
+	}
+	.preview-panel .preview-file-review .preview-file-header.justify>.item.title {
+		width: 100%;
+	}
+	.preview-panel .preview-file-header .menu-etc {
+		margin: 0.8rem 0.8rem 0 0
+	}
+	.preview-panel .preview-file-header .menu-etc {
+		margin: 0.8rem 0.8rem 0 0
+	}
+	.preview-panel .preview-file-review .preview-panel-content {
+		position: relative;
+		margin: 0;
+		height: 20rem
+	}
+	.preview-panel .preview-file-review .preview-panel-footer {
+		position: relative
+	}
+}

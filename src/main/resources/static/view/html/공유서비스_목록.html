@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+    <meta name="robots" content="noindex">
+    <meta name="title" content="국가 연구데이터 플랫폼">
+    <meta name="keywords" content="국가 연구데이터 플랫폼">
+    <meta name="description" content="사이트 설명">
+    <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+    <title>국가 연구데이터 플랫폼 : DataON</title>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+    <!-- 서브 CSS -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 공통 JS -->
+    <!--[if lt IE 9]>
+    <script src="../js/dist/jquery/html5.js"></script>
+    <![endif]-->
+    <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/cmmn.js"></script>
+    <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+    <!-- 서브 JS -->
+    <script src="../js/sub.js"></script>
+    <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+</head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">데이터 등록</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>등록</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>데이터등록</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="container">
+            <div id="content">
+                <h3 class="title">공유서비스 목록</h3>
+                <div class="input_wrap">
+                    <h5>공유서비스 신청정보</h5>
+                    <div class="item">
+                        <dl>
+                            <dt>
+                                관리자<em class="point">*<span class="blind">필수</span></em>
+                            </dt>
+                            <dd>
+                                <ul class="sub_inputBox">
+                                    <li>
+                                        <div class="per50">
+                                            <div class="subInput_tit">
+                                                <label for="rps_name">담당자명(한글)</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <input type="text" name="rps_name" id="rps_name" value="김가람">
+                                            </div>
+                                        </div>
+                                        <div class="per50">
+                                            <div class="subInput_tit">
+                                                <label for="rps_id">ID</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <input type="text" name="rps_id" id="rps_id" value="Gg****kr">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="subInput_tit">
+                                                <label for="rps_Email_1">E-mail<em class="point">*<span class="blind">필수</span></em></label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <div class="email">
+                                                    <input type="text" name="rps_Email_1" id="rps_Email_1" title="이메일 계정을 입력하세요." value="ggangkkr">
+                                                    @
+                                                    <input type="text" name="rps_Email_2" id="rps_Email_2" title="이메일 주소를 입력하세요." class="email_addr" value="naver.com">
+                                                    <select name="email" class="email_sel" title="이메일 입력방법을 선택하세요.">
+                                                        <option value="1" selected="">직접입력</option>
+                                                        <option value="naver.com">naver.com</option>
+                                                        <option value="gmail.com">gmail.com</option>
+                                                        <option value="daum.net">daum.net</option>
+                                                        <option value="nate.com">nate.com</option>
+                                                        <option value="kakao.com">kakao.com</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="subInput_tit">
+                                                <label for="rps_con_1">연락처<em class="point">*<span class="blind">필수</span></em></label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <div class="orcid_num">
+                                                    <input type="text" name="rps_con_1" id="rps_con_1" maxlength="3" value="010">
+                                                    -
+                                                    <input type="text" name="rps_con_2" id="rps_con_2" maxlength="4" value="1234">
+                                                    -
+                                                    <input type="text" name="rps_con_3" id="rps_con_3" maxlength="4" value="5678">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="subInput_tit top">
+                                                <label for="rps_atc">소속기관</label>
+                                            </div>
+                                            <div class="subInput_box">
+                                                <div class="inputBtn_box">
+                                                    <input type="text" name="rps_atc" id="rps_atc" value="플랜아이">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <h5>공유서비스 활용정보</h5>
+                    <div class="item">
+                        <dl>
+                            <dt>
+                                <label for="svc_use">활용용도</label>
+                            </dt>
+                            <dd>
+                                <select id="svc_use" name="svc_use" class="mw20rem">
+                                    <option value="" selected="">용도를 선택해 주세요.</option>
+                                    <option value="ko">유형 A</option>
+                                    <option value="ko">유형 B</option>
+                                    <option value="ko">유형 C</option>
+                                    <option value="ko">유형 D</option>
+                                    <option value="ko">유형 E</option>
+                                    <option value="ko">유형 F</option>
+                                    <option value="ko">유형 G</option>
+                                    <option value="ko">유형 H</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>활용목적<em class="point">*<span class="blind">필수</span></em>
+                            <i class="dt_sub_text">(서비스 대상/개요 등)</i>
+                            </dt>
+                            <dd>
+                                <textarea name="rac_need" id="rac_need" maxlength="512" rows="5" onkeyup="engKorChkWord(this, 512);" class="byteChk" placeholder="최소 30자 이상, 최대한 자세히 기입해주세요."></textarea>
+                                <div class="text_byteBox float_right">
+                                    <span class="textbyte">0</span>&nbsp;<span>byte/512byte</span>
+                                </div>
+                                <div class="info_box type2">
+                                    <i class="xi-error"></i>
+                                    <span>서비스 대상, 서비스 개요 등을 작성해주세요.</span>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>
+                                <label for="svc_type">기관유형</label>
+                            </dt>
+                            <dd>
+                                <select id="svc_type" name="svc_type" class="mw20rem">
+                                    <option value="" selected="">기관 유형을 선택해 주세요.</option>
+                                    <option value="ko">기관 A</option>
+                                    <option value="ko">기관 B</option>
+                                    <option value="ko">기관 C</option>
+                                    <option value="ko">기관 D</option>
+                                    <option value="ko">기관 E</option>
+                                    <option value="ko">기관 F</option>
+                                    <option value="ko">기관 G</option>
+                                    <option value="ko">기관 H</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt><label for="svc_url">URL</label></dt>
+                            <dd>
+                                <input type="text" id="svc_url" name="svc_url" class="mw20rem">
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt><label for="svc_ip">서버IP<em class="point">*<span class="blind">필수</span></em></label></dt>
+                            <dd>
+                                <input type="text" id="svc_ip" name="svc_ip" class="mw20rem" placeholder="000.000.000.000">
+                                <div class="addBtn_wrap">
+                                    <button type="button" class="addBtn"><span class="blind">추가</span></button>
+                                    <button type="button" class="addBtn minus"><span class="blind">제거</span></button>
+                                </div>
+                                <div class="info_box type2">
+                                    <i class="xi-error"></i>
+                                    <span>여러 개의 IP를 등록할 수 있습니다. 아이피는 000.000.000.000 형식으로 “ . “까지 포함하여 작성해주세요.</span>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <h5>이용허락범위</h5>
+                    <div class="item">
+                        <div id="open1" class="openView">
+                            <dl>
+                                <dt>CC License <em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <ul class="license_list">
+                                        <li>
+                                            <input type="radio" id="ccBy" name="datasetCcLicense" value="01" checked="checked">
+                                            <label for="ccBy">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby.png" alt="CC BY">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시 </strong>
+                                                        <span>- 저작자의 이름, 저작물의 제목, 출처 등 저작자에 관한 표시를 해주어야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div id="open2" class="openView">
+                            <dl>
+                                <dt>CC License <em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <div class="gray_box tac">
+                                        <span class="warning_txt">해당 데이터는 "비공개"로 선택되어 외부에 공유되지 않는 자료로 등록됩니다.</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div id="open3" class="openView">
+                            <dl>
+                                <dt>엠바고 기간 <em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <ul class="sub_inputBox">
+                                        <li>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="datasetEmbgStartDt">시작일</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" id="datasetEmbgStartDt" name="datasetEmbgStartDt" maxlength="10" class="dateBox hasDatepicker" placeholder="클릭하여 달력 선택">
+                                                </div>
+                                            </div>
+                                            <div class="per50">
+                                                <div class="subInput_tit">
+                                                    <label for="datasetEmbgEndDt">종료일</label>
+                                                </div>
+                                                <div class="subInput_box">
+                                                    <input type="text" id="datasetEmbgEndDt" name="datasetEmbgEndDt" maxlength="10" class="dateBox hasDatepicker" placeholder="클릭하여 달력 선택">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>CC License <em class="point">*<span class="blind">필수</span></em></dt>
+                                <dd>
+                                    <ul class="license_list">
+                                        <li>
+                                            <input type="radio" id="ccBy2" name="datasetCcLicense2" value="01" checked="checked">
+                                            <label for="ccBy2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby.png" alt="CC BY">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시 </strong>
+                                                        <span>- 저작자의 이름, 저작물의 제목, 출처 등 저작자에 관한 표시를 해주어야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="ccByNc2" name="datasetCcLicense2" value="02">
+                                            <label for="ccByNc2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby-nc.png" alt="CC BY-NC">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시-비영리 </strong>
+                                                        <span>- 저작자를 밝히면 자유로운 이용이 가능하지만 영리목적으로 이용할 수 없습니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="ccByNd2" name="datasetCcLicense2" value="03">
+                                            <label for="ccByNd2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby-nd.png" alt="CC BY-ND">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시-변경금지 </strong>
+                                                        <span>- 저작자를 밝히면 자유로운 이용이 가능하지만 변경 없이 그대로 이용해야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="ccBySa2" name="datasetCcLicense2" value="04">
+                                            <label for="ccBySa2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby-sa.png" alt="CC BY-SA">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시-동일조건변경허락 </strong>
+                                                        <span>- 저작자를 밝히면 자유로운 이용이 가능하고 저작물의 변경도 가능하지만 2차적 저작물에는 원 저작물에 적용된 것과 동일한 라이선스를 적용해야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="ccByNcSa2" name="datasetCcLicense2" value="05">
+                                            <label for="ccByNcSa2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby-nc-sa.png" alt="CC BY-NC-SA">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시-비영리-동일조건변경허락 </strong>
+                                                        <span>- 저작자를 밝히면 이용이 가능하며 저작물의 변경도 가능하지만 영리목적으로 이용할 수 없고 2차적 저작물에는 원 저작물과 동일한 라이선스를 적용해야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="ccByNcNd2" name="datasetCcLicense2" value="06">
+                                            <label for="ccByNcNd2">
+                                                <span class="license_item">
+                                                    <span class="license_img">
+                                                        <img src="../images/ccby-nc-nd.png" alt="CC BY-NC-ND">
+                                                    </span>
+                                                    <span class="license_txt">
+                                                        <strong>저작자표시-비영리-변경금지 </strong>
+                                                        <span>- 저작자를 밝히면 자유로운 이용이 가능하지만 영리목적으로 이용할 수 없고 변경 없이 그대로 이용해야 합니다.</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="agree svs">
+                        <input type="checkbox" name="agree" id="agree">
+                        <label for="agree">
+                            <span class="strong">[필수]</span>&nbsp;제공 받은 자료에 대해서는 고지된 라이선스 사용규정을 준수하여 활용할 것을 서약합니다.
+                        </label>
+                    </div>
+                    <div class="gray_line tac rac_text_wrap no_border">
+                        <div class="reg_complete">
+                            <span><i class="xi-volume-up big_icon"></i></span>
+                            <strong>&lt;안내사항&gt;</strong>
+                            <div class="gray_box">
+                                <p>본 서비스 신청시 승인일로부터 24개월 간 활용이 가능합니다.</p>
+                                <p>자동 갱신되지 않으므로 연장 필요시 신규 신청을 부탁드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_btn_section">
+                <a href="#" class="btn_def black">목록으로</a>
+                <a href="#" class="service_req_btn btn_def blue">서비스 신청</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@font-face {
+	font-family:'Montserrat';
+	font-style:normal;
+	font-weight:300;
+	src:url('./Montserrat/montserrat-Light.eot');
+	src:local("※"),url('./Montserrat/montserrat-Light.eot?#iefix') format('embedded-opentype'),
+	url('./Montserrat/montserrat-Light.woff') format('woff'),
+	url(./Montserrat/montserrat-Light.ttf) format('truetype');
+}
+@font-face {
+	font-family:'Montserrat';
+	font-style:normal;
+	font-weight:400;
+	src:url('./Montserrat/montserrat-Regular.eot');
+	src:local("※"),url('./Montserrat/montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+	url('./Montserrat/montserrat-Regular.woff') format('woff'),
+	url(./Montserrat/montserrat-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family:'Montserrat';
+	font-style:normal;
+	font-weight:500;
+	src:url('./Montserrat/montserrat-Medium.eot');
+	src:local("※"),url('./Montserrat/montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+	url('./Montserrat/montserrat-Medium.woff') format('woff'),
+	url(./Montserrat/montserrat-Medium.ttf) format('truetype');
+}

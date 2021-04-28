@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no,email=no,address=no">
+        <meta name="apple-mobile-web-app-title" content="Research Data Platform">
+        <meta name="robots" content="noindex">
+        <meta name="title" content="국가 연구데이터 플랫폼">
+        <meta name="keywords" content="국가 연구데이터 플랫폼">
+        <meta name="description" content="사이트 설명">
+        <meta name="copyright" content="Copyright@2019  DataON. All Rights Reserved.">
+        <title>국가 연구데이터 플랫폼 : DataON</title>
+
+        <!-- 공통 CSS -->
+        <link rel="stylesheet" href="../css/dist/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/canvas.css">
+        <link rel="stylesheet" href="../css/dist/modal/jquery.modal.min.css">
+        <!-- 서브 CSS -->
+        <link rel="stylesheet" href="../css/sub.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- 공통 JS -->
+        <!--[if lt IE 9]>
+        <script src="../js/dist/jquery/html5.js"></script>
+        <![endif]-->
+        <script src="../js/dist/jquery/jquery-3.3.1.min.js"></script>
+        <script src="../js/dist/jquery/jquery-ui.min.js"></script>
+        <script src="../js/menu.js"></script>
+        <script src="../js/cmmn.js"></script>
+        <script src="../js/dist/jquery/jquery.modal.min.js"></script>
+        <!-- 서브 JS -->
+        <script src="../js/sub.js"></script>
+        <script src="../js/canvas.js"></script>
+        <script src="../js/dist/jquery/jquery.bxslider.min.js"></script>
+    </head>
+<body>
+<div id="skip_nav">
+    <a href="#main">본문으로 바로가기</a>
+    <a href="#gnb">주메뉴 바로가기</a>
+</div>
+<div id="wrap">
+    <header id="header_top">
+        <div class="header_wrap">
+            <h1 id="logo"><a href="/index.jsp"><img src="../images/layout/logo.png" alt="데이터온"></a></h1>
+            <nav id="gnb" class="gnb">
+                <h2 class="blind">전체메뉴</h2>
+                <div class="mo_mem">
+                    <!-- 로그인 전 -->
+                    <!--<ul class="m_mem_list login">
+                        <li><a href="#a">로그인</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>-->
+
+                    <!-- 로그인 후 -->
+                    <strong class="name">홍길동님</strong>
+                    <ul class="m_mem_list">
+                        <li><a href="#a">마이페이지</a></li>
+                        <li><a href="#a">로그아웃</a></li>
+                        <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                    </ul>
+                </div>
+                <ul>
+
+                    <li>
+                        <a href="#a"><span>DataON</span></a>
+                        <div class="sub">
+                            <ul>
+
+                                <li>
+                                    <a href="#a">소개</a>
+                                    <ul>
+                                        <li><a href="#a">소개</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#a">분석서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">활용</a></li>
+                                        <li><a href="#a">분석S/W마켓</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">호스팅서비스</a>
+                                    <ul>
+                                        <li><a href="#a">신청목록</a></li>
+                                        <li><a href="#a">리포지터리관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">공유서비스</a>
+                                    <ul>
+                                        <li><a href="#a">공유목록</a></li>
+                                        <li><a href="#a">신청목록</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#a">현황정보</a>
+                                    <ul>
+                                        <li><a href="#a">데이터현황</a></li>
+                                        <li><a href="#a">활용현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#a"><span>검색</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브2-1</a></li>
+                                <li><a href="#a">서브2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>등록</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브3-1</a></li>
+                                <li><a href="#a">서브3-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>서비스</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브4-1</a></li>
+                                <li><a href="#a">서브4-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>커뮤니티</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브5-1</a></li>
+                                <li><a href="#a">서브5-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#a"><span>이슈&리서치</span></a>
+                        <div class="sub">
+                            <ul>
+                                <li><a href="#a">서브6-1</a></li>
+                                <li>
+                                    <a href="#a">서브6-2</a>
+                                    <ul>
+                                        <li><a href="#a">서브6-2-1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#a" class="all_close"><span class="blind">전체메뉴 닫기</span></a>
+                <div class="gnb_bg"></div>
+            </nav>
+            <div class="etc_menu">
+                <!-- 로그인 전 -->
+                <!--<ul class="link">
+                    <li><a href="#a">로그인</a></li>
+                    <li><a href="#a" target="_blank" title="새창">EN</a></li>
+                </ul>-->
+
+                <!-- 로그인 후 -->
+                <ul class="link login">
+                    <li>
+                        <a href="#" class="new_notice">
+                            <span>10+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="login_user">
+                            <img src="../images/layout/img_user_default.gif" alt="접속자">
+                        </a>
+                        <ul class="user_menu">
+                            <li class="name"><strong>홍길동님</strong></li>
+                            <li><a href="#a">마이페이지</a></li>
+                            <li><a href="#a">EN</a></li>
+                            <li><a href="#a">관리자</a></li>
+                            <li><a href="#a">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a href="#a" class="btn_total">
+                    <p class="blind">전체메뉴</p>
+                    <i class="bar1"></i>
+                    <i class="bar2"></i>
+                    <i class="bar3"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <aside id="quick">
+        <h2 class="blind">퀵메뉴</h2>
+        <a href="#a" class="quick_btn">QUICK LINK <span class="blind">열기</span></a>
+        <div class="quick_menu">
+            <ul>
+                <li>
+                    <a href="/intro/intro03.do">
+                        <img src="../images/layout/icon_quick_1.png" alt="">
+                        <span>사용자 가이드</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_2.png" alt="">
+                        <span>마이 드라이브</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_3.png" alt="">
+                        <span>분석 플랫폼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_4.png" alt="">
+                        <span>Open API</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_5.png" alt="">
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/layout/icon_quick_6.png" alt="">
+                        <span>커뮤니티</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- 서브 상단(visual, location) : s -->
+    <div id="sub_top">
+
+        <section class="visual">
+            <h2 id="sub_title">소개</h2>
+        </section>
+
+        <!-- menu navigation -->
+        <section class="location">
+            <div class="container">
+                <form name="headerFrmname" id="headerFrmname" method="post">
+                    <input type="hidden" name="mm" id="mm" value="MENU_00102">
+                    <input type="hidden" name="sm" id="sm" value="MENU00144">
+                    <input type="hidden" name="subFirstMenuId" id="subFirstMenuId" value="MENU00144">
+                    <div class="loc_row">
+                        <ul class="location_list">
+                            <li class="home">
+                                <a href="/main.do">
+                                    <i class="xi-home"></i> <span class="blind">HOME</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <span>DataOn</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>소개</span>
+                            </li>
+                        </ul>
+                        <ul class="location_etc">
+                            <li>
+                                <a href="#" title="공유하기" class="share"><span class="blind">공유하기</span></a>
+                            </li>
+                            <li>
+                                <a href="#" title="프린트하기" class="print"><span class="blind">프린트하기</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 검색 : s -->
+        <aside id="total_search">
+            <a href="#" class="search_btn"><span>SEARCH</span></a>
+            <div class="search_wrap">
+                <div class="container">
+                    <fieldset>
+                        <legend>통합검색</legend>
+                        <ul class="totSch_tab">
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType1" checked>
+                                    <label for="searchType1">일반검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType2">
+                                    <label for="searchType2">상세검색</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="totSch_item">
+                                    <input type="radio" name="searchType" id="searchType3">
+                                    <label for="searchType3">MAP 검색</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="totSch_input">
+                            <label for="integratedSearchInput" class="blind">통합검색</label>
+                            <input type="text" name="search_input" id="integratedSearchInput" title="검색어를 입력하세요." placeholder="통합검색">
+                            <button type="button" class="totSch_btn"><span class="blind">검색하기</span></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </aside>
+        <!-- 검색 : e -->
+    </div>
+    <!-- 서브 상단(visual, location) : e -->
+
+    <main id="main">
+        <div class="canvas_1page2"></div>
+        <div class="container canvas_1page">
+            <div id="content">
+                <!-- 일반컨텐츠 여기에 넣어주세요 : S -->
+                <div class="canvas_title">
+                    <div class="volum_wrap">
+                        <div class="volum">
+                            <div class="value">
+                                <div class="wave"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Welcome to Canvas</h3>
+                    <span>Canvas hub description</span>
+                </div>
+                <div class="select_wrap">
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>워크플로우</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>마켓</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>Jupyter lab</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>애플리케이션 등록</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>My Canvas</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                    <div class="select_box">
+                        <a href="#">
+                            <div class="box_icon">
+                            </div>
+                            <strong>관리자</strong>
+                            <span>Service description</span>
+                        </a>
+                    </div>
+                </div>
+
+                <script src="js/script.js"></script>
+                    
+                <!-- 일반컨텐츠 여기에 넣어주세요 : E -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 섹션 : s -->
+    <footer id ="footer">
+        <div class="footer_wrap">
+            <div class="footer_logo">
+                <img src="../images/layout/footer_logo.png" alt="데이터온">
+            </div>
+            <div class="footer_content">
+                <ul class="fnb">
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보처리방침</a></li>
+                    <li><a href="#a">기관소개</a></li>
+                </ul>
+                <address>(우)34141 대전광역시 유성구 대학로 245 한국과학기술정보연구원. <span>문의메일 : <a href="mailto:dataon@kisti.re.kr">dataon@kisti.re.kr</a></span></address>
+                <p class="copyright">COPYRIGHT@2019 KISTI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 섹션 : e -->
+</div>
+</body>
+</html>
