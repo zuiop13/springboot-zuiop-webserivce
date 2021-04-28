@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello") // Get 요청 API로 만들어줌 -> spring에서는 RequestMapping(method=RequestMethod.Get)
     public String hello(){
-        return "hello";
+        return "sdfdfjlhello";
     }
 }
