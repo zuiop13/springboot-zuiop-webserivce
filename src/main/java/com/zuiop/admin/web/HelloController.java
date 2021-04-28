@@ -31,7 +31,7 @@ public class HelloController {
 
     @GetMapping("/insertTest") // Get 요청 API로 만들어줌 -> spring에서는 RequestMapping(method=RequestMethod.Get)
     public void insertTest(HttpServletResponse httpServletResponse, HttpServletRequest httpServletRequest) throws IOException {
-        String url = "jdbc:postgresql://localhost:5432/springdata";
+        String url = "jdbc:postgresql://localhost:5432/postgres";
         String username = "zuiop13";
         String password = "pass";
 
