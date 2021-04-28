@@ -19,6 +19,7 @@ public class HelloController {
     public String hello(HttpServletResponse httpServletResponse,HttpServletRequest httpServletRequest) throws IOException {
         String cPath=httpServletRequest.getContextPath();
         System.out.println("테스트 경로"+cPath);
+
         return "플랜아이 테스트";
     }
 
